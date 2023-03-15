@@ -51,7 +51,7 @@
                             </div>
                             <div class="col-md">
                                 <div class="form-group row">
-                                    <button type="submit" style="border: none; width:10%; height: 30px; background-color: #007bff; color: #fff; border-radius:3px"> Upload </button>
+                                    <button type="submit" style="border: none; width:10%; height: 30px; background-color: #007bff; color: #fff; border-radius:3px"> Save </button>
                                 </div>
                             </div>
                         </form>

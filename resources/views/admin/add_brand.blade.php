@@ -35,7 +35,7 @@
                                     <div class="form-group row">
                                         <button type="submit"
                                             style="border: none; width:40%; height: 30px; background-color: #007bff; color: #fff; border-radius:3px">
-                                            Upload 
+                                            Save 
                                         </button>
                                     </div>
 

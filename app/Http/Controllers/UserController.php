@@ -46,7 +46,7 @@ class UserController extends Controller
     // Display Admin Management
     public function AdminManagement(){
         $products = Product::all();
-        return view('admin.management', compact('products'));
+        return view('admin.management', compact('products')); 
     }
 
     // Display Admin Upload Product
@@ -90,6 +90,14 @@ class UserController extends Controller
             }else{
                 return redirect()->route('auth.staff')->with('error1', 'Account exist!');
             }
+        }
+    }
+
+    // Display Profile
+    public function displayProfile($id){
+        if(Auth::user()->id == $id){
+            $user = DB::table('users')->where('id', $id)->get();
+            return view('admin.profile', compact('user'));
         }
     }
 }

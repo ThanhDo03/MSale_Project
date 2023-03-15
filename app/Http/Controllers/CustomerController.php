@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Brand;
 use Illuminate\Http\Request;
 use App\Models\Cart_Items;
 use App\Models\Product;
@@ -42,14 +43,14 @@ class CustomerController extends Controller
         if (Auth::user()) {
             $data = DB::table('cart_items')->where('customer_id', $id)->get();
             if ($data) {
-                
+                $brand = Brand::all();
                 $cart_items = DB::table('cart_items')
                     ->join('product','cart_items.product_id','=','product.id')
-                    ->select('cart_items.*','product.product_name','product.product_price','product.product_image','product.brand_id')
+                    ->select('cart_items.*','product.product_name','product.product_price','product.product_image','product.brand_id') 
                     ->where('cart_items.customer_id', $id)
                     ->get();
                 // dd($cart_items);
-                return view('customer.cart', compact('cart_items'));
+                return view('customer.cart', compact('cart_items','brand'));
             }else{
                 $cart_items = Cart_Items::all();
                 $cart_items = Product::all();

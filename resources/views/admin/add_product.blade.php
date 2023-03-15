@@ -55,7 +55,7 @@
                                 <label for="exampleTextarea1">Descripsion</label>
                                 <input class="form-control" id="exampleTextarea1" rows="4" name="des_product">
                             </div>
-                            <button type="submit" class="btn btn-gradient-primary mr-2">Upload</button>
+                            <button type="submit" class="btn btn-gradient-primary mr-2"> Save </button>
                         </form>
                             <br>
                             <a href="{{route('home.admin')}}"><button class="btn btn-light">Cancel</button></a>

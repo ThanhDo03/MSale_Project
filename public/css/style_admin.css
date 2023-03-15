@@ -18399,6 +18399,7 @@ dl li {
     width: 44px;
     height: 44px;
     border-radius: 100%;
+    object-fit: contain;
 }
 .sidebar .nav .nav-item.nav-profile .nav-link .nav-profile-text {
     margin-left: 1rem;
@@ -18752,5 +18753,73 @@ dl li {
     -ms-flex-positive: 1;
     flex-grow: 1;
 }
-
+.card-body .image-button {
+    width: 100%;
+    display: flex;
+}
+.card-body .image-button .image {
+    width: 10%;
+}
+.card-body .image-button .image img {
+    width: 100%;
+    height: 90%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.card-body .image-button .text {
+    width: 70%;
+}
+.text .card-body-1 {
+    padding: 1.5rem 2.5rem;
+}
+.col-md-9 {
+    -webkit-box-flex: 0;
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+.col-sm-9 img {
+    width: 30%;
+    height: 90%;
+    border-radius: 50%;
+    object-fit: cover;
+}
 /*# sourceMappingURL=style.css.map */
+
+.file-input::-webkit-file-upload-button {
+    visibility: hidden;
+}
+.file-input::before {
+    content: 'Select some files';
+    display: inline-block;
+    background: linear-gradient(top, #f9f9f9, #e3e3e3);
+    border: 1px solid #999;
+    border-radius: 3px;
+    padding: 5px 8px;
+    outline: none;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    cursor: pointer;
+    text-shadow: 1px 1px #fff;
+    font-weight: 700;
+    font-size: 10pt;
+}
+.file-input:hover::before {
+    border-color: black;
+}
+.file-input:active::before {
+    background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}
+.file-delete{
+    display: inline-block;
+    background: linear-gradient(top, #f9f9f9, #e3e3e3);
+    border: 1px solid #999;
+    border-radius: 3px;
+    padding: 5px 8px;
+    outline: none;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    cursor: pointer;
+    text-shadow: 1px 1px #fff;
+    font-weight: 700;
+    font-size: 10pt;
+}
