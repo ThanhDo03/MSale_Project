@@ -1,6 +1,6 @@
 @extends('customer.layout.index')
 @section('content')
-    <section class="welcome_area bg-img background-overlay" style="background-image: url('/image/gallery/Slider1.jpg');">
+    {{-- <section class="welcome_area bg-img background-overlay" style="background-image: url('/image/gallery/Slider1.jpg');">
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-12">
@@ -8,6 +8,43 @@
                         <h6>Shopping</h6>
                         <h2>New Collection</h2>
                         <a href="#" class="btn essence-btn">view collection</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> --}}
+
+    <section class="hero-section">
+        <div class="hero-items owl-carousel">
+            <div class="single-hero-items set-bg" style="background-image: url('/image/gallery/Slider1.jpg');">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-5">
+                            <span>Shopping</span>
+                            <h1>Black friday</h1>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore</p>
+                            <a href="#" class="primary-btn">View Collection</a>
+                        </div>
+                    </div>
+                    <div class="off-card">
+                        <h2>Sale <span>50%</span></h2>
+                    </div>
+                </div>
+            </div>
+            <div class="single-hero-items set-bg" style="background-image: url('/image/gallery/Slider2.jpg');">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-5">
+                            <span>Shopping</span>
+                            <h1>Black friday</h1>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore</p>
+                            <a href="#" class="primary-btn">View Collection</a>
+                        </div>
+                    </div>
+                    <div class="off-card">
+                        <h2>Sale <span>50%</span></h2>
                     </div>
                 </div>
             </div>
