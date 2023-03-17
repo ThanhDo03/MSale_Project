@@ -38,11 +38,11 @@
                                                 <td>
                                                     <a href="{{ route('update.product', $product->id) }}">
                                                         <button style="border: none"
-                                                            class="badge badge-gradient-success">Edit</button>
+                                                            class="badge badge-gradient-success">EDIT</button>
                                                     </a>
                                                     <a href="{{ route('delete.product', $product->id) }}">
                                                         <button style="border: none" class="badge badge-gradient-danger"
-                                                            onclick="FunctionDelete()">Delete</button>
+                                                            onclick="FunctionDelete()">DELETE</button>
                                                     </a>
                                                     <script>
                                                         function FunctionDelete() {
