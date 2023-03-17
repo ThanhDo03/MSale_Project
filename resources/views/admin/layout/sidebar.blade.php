@@ -5,7 +5,7 @@
             <li class="nav-item nav-profile">
                 <a href="{{route('display.profile',Auth::user()->id)}}" class="nav-link">
                   <div class="nav-profile-image">
-                    <img src="{{asset('image/thang.jpg')}}" alt="profile">
+                    <img src="{{asset('image/eiu.jpg')}}" alt="profile">
                     <!--change to offline or busy as needed-->
                   </div>
                   <div class="nav-profile-text d-flex flex-column">
