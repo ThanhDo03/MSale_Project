@@ -50,6 +50,12 @@
                 </span>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="{{route('display.product.sale')}}">
+                    <i class="fa-brands fa-salesforce"></i>
+                    <span class="menu-title">.     Product Sale %</span>
+                </a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="{{route('logout')}}">
                     <span class="menu-title">Logout      .</span>
 

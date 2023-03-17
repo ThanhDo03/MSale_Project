@@ -55,6 +55,14 @@
                                 <label for="exampleTextarea1">Descripsion</label>
                                 <input class="form-control" id="exampleTextarea1" rows="4" name="des_product">
                             </div>
+
+                            <div class="form-group">
+                                <label for="exampleTextarea1">Sale</label>
+                                <select class="form-control" id="exampleTextarea1" name="sale">
+                                    <option>Yes</option>
+                                    <option> </option>
+                                </select>
+                            </div>
                             <button type="submit" class="btn btn-gradient-primary mr-2"> Save </button>
                         </form>
                             <br>

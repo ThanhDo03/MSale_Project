@@ -1,11 +1,11 @@
-<script src="{{asset('customer_js/jquery/jquery-2.2.4.min.js')}}"></script>
+    <script src="{{asset('customer_js/jquery/jquery-2.2.4.min.js')}}"></script>
     <script src="{{asset('customer_js/popper.min.js')}}"></script>
     <script src="{{asset('customer_js/bootstrap.min.js')}}"></script>  
     <script src="{{asset('customer_js/plugins.js')}}"></script>  
     <script src="{{asset('customer_js/classy-nav.min.js')}}"></script>  
     <script src="{{asset('customer_js/active.js')}}"></script>  
     <script src="{{asset('customer_js/index.js')}}"></script>
-
+    <script src="{{asset('customer_js/detail_product.js')}}"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
     <script>
     window.dataLayer = window.dataLayer || [];

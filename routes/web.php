@@ -60,6 +60,8 @@ Route::post('/BrandUpdate/{id}',[BrandController::class, 'update'])->name('brand
 Route::get('/BrandDelete/{id}',[BrandController::class, 'destroy'])->name('brand.destroy');
 // Display Profile
 Route::get('/Profile/{id}',[UserController::class, 'displayProfile'])->name('display.profile');
+// Display Admin Product Sale %
+Route::get('/ProductSale',[UserController::class, 'AdminProductSale'])->name('display.product.sale');
 
 // Function Admin Upload Product
 Route::post('/UploadProduct',[ProductController::class, 'store'])->name('add.product');
@@ -80,3 +82,5 @@ Route::get('/CartProduct/{id_product}',[CustomerController::class, 'cart'])->nam
 // Display Cart - Customer
 Route::get('/ShowCart/{id_customer}',[CustomerController::class,'showCart'])->name('show.cart');
 Route::get('/ShowCart',[CustomerController::class,'showCart_NoUser']);
+// Display Detail Product
+Route::get('/DetailProduct/{id}',[CustomerController::class, 'Detail_Product'])->name('detail.product');

@@ -71,4 +71,10 @@ class CustomerController extends Controller
             ->with('error1', 'You need to be logged in to view your shopping cart!');
         } 
     }
+
+    // Display Detail Product
+    public function Detail_Product($id){
+        $detail_product = Product::find($id);
+        return view('customer.detail_product', compact('detail_product'));
+    }
 }

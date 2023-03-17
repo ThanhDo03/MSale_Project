@@ -17,5 +17,5 @@ class Product extends Model
         return $this->belongsTo('App\Models\Brand', 'brand_id');
     }
 
-    protected $fillable = ['product_name', 'brand_id', 'product_price', 'product_image', 'product_amount','Staff','Status','product_des'];
+    protected $fillable = ['product_name', 'brand_id', 'product_price', 'product_image', 'product_amount','Staff','Status','product_des','sale'];
 }

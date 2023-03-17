@@ -6,7 +6,8 @@
                 <div class="col-12 grid-margin">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="card-title">Product for Shopping <i class="fa-sharp fa-solid fa-cart-shopping"></i>
+                            <h4 class="card-title">Product for Shopping Sale <i
+                                    class="fa-sharp fa-solid fa-cart-shopping"></i>
                             </h4>
                             <div class="table-responsive">
                                 <table class="table">
@@ -15,7 +16,7 @@
                                             <th> Product </th>
                                             <th> Brand </th>
                                             <th> Price </th>
-                                            <th> Image </th>
+                                            {{-- <th> Image </th> --}}
                                             <th> Amount </th>
                                             <th> Staff </th>
                                             <th> Status </th>
@@ -23,16 +24,16 @@
                                         </tr>
                                     </thead>
                                     @foreach ($products as $product)
-                                        @if ($product->sale == '')
+                                        @if ($product->sale == 'Yes')
                                             <tbody>
                                                 <tr>
                                                     <td>{{ $product->product_name }}</td>
                                                     <td>{{ $product->brand->name }}</td>
                                                     <td>{{ $product->product_price }}</td>
-                                                    <td>
+                                                    {{-- <td>
                                                         <img src="{{ asset('image/Product/' . $product->product_image) }}"
                                                             class="mr-2" alt="image">
-                                                    </td>
+                                                    </td> --}}
                                                     <td>{{ $product->product_amount }}</td>
                                                     <td>{{ $product->Staff }}</td>
                                                     <td>{{ $product->Status }}</td>
@@ -58,11 +59,19 @@
                                                         </script>
                                                     </td>
                                                 </tr>
+                                                <tr>
+                                                    <td colspan="7">
+                                                        <div>
+                                                            <img src="{{ asset('image/Product/' . $product->product_image) }}"
+                                                            class="img_banner" alt="image">
+                                                        </div>
+                                                    </td>
+                                                </tr>
                                             </tbody>
                                         @endif
                                     @endforeach
                                 </table>
-                            </div>
+                            </div> 
                         </div>
                     </div>
                 </div>

@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('Staff');
             $table->string('Status');
             $table->string('product_des');
+            $table->string('sale');
             $table->timestamps();
         });
     }

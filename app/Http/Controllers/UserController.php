@@ -49,6 +49,12 @@ class UserController extends Controller
         return view('admin.management', compact('products')); 
     }
 
+    // Display Admin Product Sale %
+    public function AdminProductSale(){
+        $products = Product::all();
+        return view('admin.display_product_sale', compact('products'));
+    }
+
     // Display Admin Upload Product
     public function UploadProduct(){
         $brand = \App\Models\Brand::select('id','name')->get();

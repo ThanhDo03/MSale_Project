@@ -59,6 +59,15 @@
                                 <label for="exampleTextarea1">Descripsion</label>
                                 <input class="form-control" id="exampleTextarea1" rows="4" name="des_product" value="{{$product->product_des}}">
                             </div>
+
+                            <div class="form-group">
+                                <label for="exampleTextarea1">Sale</label>
+                                <select class="form-control" id="exampleInputName1" name="sale">
+                                    <option>Yes</option>
+                                    <option> </option>
+                                </select>
+                            </div>
+
                             <input type="hidden" name="id" value="{{$product->id}}">
                             <button type="submit" class="btn btn-gradient-primary mr-2">Update</button>
                             <a href="{{route('home.admin')}}"><button class="btn btn-light">Cancel</button></a>

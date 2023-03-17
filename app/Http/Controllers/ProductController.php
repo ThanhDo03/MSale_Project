@@ -27,6 +27,7 @@ class ProductController extends Controller
                 $newProdcuct->Staff = $request->staff;
                 $newProdcuct->Status = $request->status_product;
                 $newProdcuct->product_des = $request->des_product;
+                $newProdcuct->sale = $request->sale;
                 $newProdcuct->save();
                 $products = Product::all();
                 return redirect()
@@ -65,6 +66,7 @@ class ProductController extends Controller
                 $product_edit->Staff = $request->staff;
                 $product_edit->Status = $request->status_product;
                 $product_edit->product_des = $request->des_product;
+                $product_edit->sale = $request->sale;
                 $product_edit->save();
                 $products = Product::all();
                 return redirect()

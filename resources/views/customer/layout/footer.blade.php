@@ -1,6 +1,6 @@
 <div class="brands-area d-flex align-items-center justify-content-between">
 
-    <div class="single-brands-logo">
+    {{-- <div class="single-brands-logo">
         <img src="{{asset('image/Logo/Nike-Logo.png')}}" alt="">
     </div>
 
@@ -10,16 +10,29 @@
 
     <div class="single-brands-logo">
         <img src="{{asset('image/Logo/Vans-Logo.png')}}" alt="">
-    </div>
+    </div> --}}
 
-    <div class="single-brands-logo">
+    {{-- <div class="single-brands-logo">
         <img src="{{asset('image/Logo/MLB-Logo.png')}}" alt="">
     </div>
 
     <div class="single-brands-logo">
         <img src="{{asset('image/Logo/New-balance-Logo.png')}}" alt="">
-    </div>
+    </div> --}}
 
+    {{-- <section class="welcome_area bg-img background-overlay" style="background-image: url('/image/gallery/Slider1.jpg');">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12">
+                    <div class="hero-content">
+                        <h6>Shopping</h6>
+                        <h2>New Collection</h2>
+                        <a href="#" class="btn essence-btn">view collection</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> --}}
    
 </div>
 <footer class="footer_area clearfix">

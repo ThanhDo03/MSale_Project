@@ -17374,6 +17374,12 @@ dl li {
 .table.table-borderless th {
     border: none;
 }
+.table th img,
+.table td .img_banner {
+    width: 100%;
+    height: 100%;
+    border-radius: 2%;
+}
 
 /* Tabs */
 .add-items {

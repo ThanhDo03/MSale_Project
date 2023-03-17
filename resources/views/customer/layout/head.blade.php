@@ -9,7 +9,7 @@
 
 
     <title>Shoppingg - Fashion </title>
-
+    <link rel="stylesheet" href="{{asset('customer_css/detail_product.css')}}">
     <link rel="icon" href="img/core-img/favicon.ico">
     <link rel="stylesheet" href="https://kit.fontawesome.com/f52718c374.css" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/f52718c374.js" crossorigin="anonymous"></script>
