@@ -8,7 +8,7 @@
                         <div class="card-body">
                             <div class="image-button">
                                 <div class="image">
-                                    <img src="{{ asset('image/eiu.jpg') }}" alt="profile">
+                                    <img src="{{ asset('image/thang.jpg') }}" alt="profile">
                                 </div>
                                 <div class="text">
                                     <div class="card-body-1">
@@ -65,7 +65,7 @@
                                                 <div class="form-group row">
                                                     <label class="col-sm-3 col-form-label"> Your Photo </label>
                                                     <div class="col-sm-9">
-                                                        <img src="{{ asset('image/eiu.jpg') }}" alt="profile">
+                                                        <img src="{{ asset('image/thang.jpg') }}" alt="profile">
                                                         <div class="col-sm-9">
                                                             <div>
                                                                 <a href="" class="file-delete">Delete</a>
