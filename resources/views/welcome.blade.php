@@ -44,7 +44,7 @@
                     <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
                     <a href="#" class="social"><i class="fa fa-globe"></i></a>
                 </div>
-                <span>or use your account</span>
+                <span>Or use your account</span>
                 <input type="email" placeholder="Email" name="email_name" required />
                 <input type="password" placeholder="Password" name="pwd" required />
                 @if(session('error'))
