@@ -9,13 +9,13 @@
 
 
     <title>Shoppingg - Fashion </title>
-
+    <link rel="stylesheet" href="{{asset('customer_css/detail_product.css')}}">
     <link rel="icon" href="img/core-img/favicon.ico">
     <link rel="stylesheet" href="https://kit.fontawesome.com/f52718c374.css" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/f52718c374.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{asset('customer_css/core-style.css')}}">
     <link rel="stylesheet" href="{{asset('customer_css/style.css')}}">
-    <script nonce="d4d17f98-81e8-4f74-b70a-34929b581277">
+    <script nonce="d4d17f98-81e8-4f74-b70a-34929b581277"> 
     (function(w, d) {
         ! function(f, g, h, i) {
             f[h] = f[h] || {};
