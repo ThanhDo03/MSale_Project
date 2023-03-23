@@ -6,6 +6,9 @@
                 <div class="col-12 grid-margin">
                     <div class="card">
                         <div class="card-body">
+                            @if (session('successPwd'))
+                                <script>alert("{{ session('successPwd') }}")</script>
+                            @endif
                             <h4 class="card-title">Product for Shopping <i class="fa-sharp fa-solid fa-cart-shopping"></i>
                             </h4>
                             <div class="table-responsive">

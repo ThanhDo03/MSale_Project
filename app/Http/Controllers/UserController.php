@@ -7,6 +7,9 @@ use App\Models\Product;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Hash;
+
 
 class UserController extends Controller
 {
@@ -101,9 +104,74 @@ class UserController extends Controller
 
     // Display Profile
     public function displayProfile($id){
-        if(Auth::user()->id == $id){
-            $user = DB::table('users')->where('id', $id)->get();
-            return view('admin.profile', compact('user'));
+            $users = User::find($id);
+            // $user = DB::table('users')->where('id', $id)->get();
+            return view('admin.profile', compact('users'));
+    }
+
+    // Function Update Profile Admin
+    public function updateProfile(Request $request){
+        if($request->isMethod('POST')){
+            $user_edit = User::find($request->id);
+            if($user_edit != null){
+                $user_edit->name = $request->name;
+                $user_edit->email = $request->email;
+                if($request->avatar != null){
+                    $imageName = $request->file('avatar')->getClientOriginalName();
+                    $request->avatar->move(public_path('image/Avatar'), $imageName);
+                    if ($user_edit->avatar) {
+                        $oldImagePath = public_path('image/Avatar/' . $user_edit->avatar);
+                        if (file_exists($oldImagePath)) {
+                            unlink($oldImagePath);
+                        }
+                    }
+                    $user_edit->avatar = $imageName;
+                }
+                $user_edit->save();
+                return redirect()->back();
+            }
+        }
+        else{
+
+        }
+    }
+
+    // Display Change Pwd Admin
+    public function Password(){
+        return view('admin.change_pwd');
+    }
+
+    // Function Change Pwd Admin
+    public function changePwd(Request $request){
+        $validator = Validator::make($request->all(), [
+            'password'        => 'required',
+            'new_password'         => 'required|min:8|max:30',
+            'confirm_password' => 'required|same:new_password'
+        ]);
+        if ($validator->fails()) {
+            return response()->json([
+                'message' => 'validations fails',
+                'errors' => $validator->errors()
+            ], 422);
+        }
+        $user = User::findOrFail($request->id);
+
+        // $user = $request->user();
+        if (Hash::check($request->password,$user->password)) {
+            $user = User::findOrFail($request->id);
+            $user->password = bcrypt($request->new_password);
+            $user->save();
+            // $user->fill([
+            //     'password' => Hash::make($request->new_password)
+            // ])->save();
+
+            $products = Product::all();
+            return redirect()
+                ->route('home.admin', compact('products'))
+                ->with('successPwd', 'Password changed');
+        } else {
+            return redirect()->back()
+                ->with('errorPwd','Password does not match');
         }
     }
 }

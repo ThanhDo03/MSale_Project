@@ -66,7 +66,7 @@
                             <button type="submit" class="btn btn-gradient-primary mr-2"> Save </button>
                         </form>
                             <br>
-                            <a href="{{route('home.admin')}}"><button class="btn btn-light">Cancel</button></a>
+                            <a href="{{route('home.admin')}}"><button class="btn btn-light">Back</button></a>
                     </div>
                 </div>
             </div>

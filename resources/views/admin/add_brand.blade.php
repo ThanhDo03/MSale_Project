@@ -46,7 +46,7 @@
                             <a href="{{ route('show.brand') }}">
                                 <button
                                     style="border: none;  height: 30px; background-color: #f2edf3; color: #000; border-radius:3px">
-                                    Cancel 
+                                    Back 
                                 </button>
                             </a>
                         </div>

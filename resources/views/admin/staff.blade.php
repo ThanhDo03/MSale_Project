@@ -23,7 +23,7 @@
                                                 <td>{{ $data->name }}</td>
                                                 <td>{{ $data->email }}</td>
                                                 @if (Auth::user()->email == 'hoangthitra09@gmail.com')
-                                                    @if ($data->name == 'TraTra')
+                                                    @if ($data->email == 'hoangthitra09@gmail.com')
                                                         <td>
                                                             <h6 style="color: red">Admin</h6>
                                                             <a href="{{ route('add.account') }}">
@@ -46,7 +46,7 @@
                                                         </td>
                                                     @endif
                                                 @else
-                                                    @if ($data->name == 'TraTra')
+                                                    @if ($data->email == 'hoangthitra09@gmail.com')
                                                         <td>Management</td>
                                                     @else
                                                         <td>

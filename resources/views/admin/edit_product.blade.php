@@ -69,8 +69,8 @@
                             </div>
 
                             <input type="hidden" name="id" value="{{$product->id}}">
-                            <button type="submit" class="btn btn-gradient-primary mr-2">Update</button>
-                            <a href="{{route('home.admin')}}"><button class="btn btn-light">Cancel</button></a>
+                            <button type="submit" class="btn btn-gradient-primary mr-2">Save</button>
+                            <a href="{{route('home.admin')}}"><button class="btn btn-light">Back</button></a>
                         </form>
                     </div>
                 </div>

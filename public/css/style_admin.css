@@ -2899,6 +2899,7 @@ pre code {
 .col-sm-7,
 .col-sm-8,
 .col-sm-9,
+.col-sm-90,
 .col-sm-10,
 .col-sm-11,
 .col-sm-12,
@@ -5358,7 +5359,7 @@ fieldset:disabled a.btn {
 
 .btn-light {
     color: #212529;
-    background-color: #f8f9fa;
+    background-color: #dbdfe4;
     border-color: #f8f9fa;
 }
 .btn-light:hover {
@@ -14722,6 +14723,18 @@ code {
     color: #ffffff;
 }
 
+.badge-gradient-success1 {
+    background: -webkit-gradient(
+        linear,
+        left top,
+        right top,
+        from(#84d9d2),
+        to(#07cdae)
+    );
+    background: linear-gradient(to right, #a0c8e4, #5c8eb2);
+    color: #ffffff;
+}
+
 .badge-gradient-info {
     background: -webkit-gradient(
         linear,
@@ -18770,7 +18783,7 @@ dl li {
     width: 100%;
     height: 90%;
     border-radius: 50%;
-    object-fit: cover;
+    object-fit: contain;
 }
 .card-body .image-button .text {
     width: 70%;
@@ -18787,15 +18800,15 @@ dl li {
     width: 30%;
     height: 90%;
     border-radius: 50%;
-    object-fit: cover;
+    object-fit: contain;
 }
 /*# sourceMappingURL=style.css.map */
 
-.file-input::-webkit-file-upload-button {
+.file-input-1::-webkit-file-upload-button {
     visibility: hidden;
 }
-.file-input::before {
-    content: 'Select some files';
+.file-input-1::before {
+    content: 'Choose an avatar';
     display: inline-block;
     background: linear-gradient(top, #f9f9f9, #e3e3e3);
     border: 1px solid #999;
@@ -18809,23 +18822,33 @@ dl li {
     font-weight: 700;
     font-size: 10pt;
 }
-.file-input:hover::before {
+.file-input-1:hover::before {
     border-color: black;
 }
-.file-input:active::before {
+.file-input-1:active::before {
     background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
 }
 .file-delete{
     display: inline-block;
-    background: linear-gradient(top, #f9f9f9, #e3e3e3);
-    border: 1px solid #999;
+    text-decoration: none;
+    background: linear-gradient(to right, #a0c8e4, #5c8eb2);
+    border: none;
     border-radius: 3px;
     padding: 5px 8px;
     outline: none;
     white-space: nowrap;
-    -webkit-user-select: none;
-    cursor: pointer;
-    text-shadow: 1px 1px #fff;
-    font-weight: 700;
     font-size: 10pt;
+    color: #ffffff;
+}
+
+.col-sm-9 .file-input-1{
+    margin-left: 5%;
+}
+
+.col-sm-90{
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 75%;
+    flex: 0 0 100%;
+    max-width: 100%;
+    text-align: center;
 }

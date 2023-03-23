@@ -62,6 +62,12 @@ Route::get('/BrandDelete/{id}',[BrandController::class, 'destroy'])->name('brand
 Route::get('/Profile/{id}',[UserController::class, 'displayProfile'])->name('display.profile');
 // Display Admin Product Sale %
 Route::get('/ProductSale',[UserController::class, 'AdminProductSale'])->name('display.product.sale');
+// Function Update Profile Admin
+Route::post('/UpdateProfile',[UserController::class,'updateProfile'])->name('update.profile.admin');
+// Display Change Password Admin
+Route::get('/ChangePass',[UserController::class, 'Password'])->name('display.change.pwd');
+// Function Change Pwd Admin
+Route::post('NewPwd',[UserController::class,'changePwd'])->name('pwd.new');
 
 // Function Admin Upload Product
 Route::post('/UploadProduct',[ProductController::class, 'store'])->name('add.product');

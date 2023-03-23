@@ -5,11 +5,11 @@
             <li class="nav-item nav-profile">
                 <a href="{{route('display.profile',Auth::user()->id)}}" class="nav-link">
                   <div class="nav-profile-image">
-                    <img src="{{asset('image/eiu.jpg')}}" alt="profile">
+                    <img src="{{asset('image/Avatar/'.Auth::user()->avatar)}}" alt="profile">
                     <!--change to offline or busy as needed-->
                   </div>
                   <div class="nav-profile-text d-flex flex-column">
-                    <span class="font-weight-bold mb-2">{{Auth::user()->email}}</span>
+                    <span class="font-weight-bold mb-2">{{Auth::user()->email}}</span> 
                     <span class="text-secondary text-small">Project Manager</span>
                   </div>
                 </a>
@@ -20,7 +20,7 @@
                     <span class="menu-title">.     Home</span>
                 </a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item"> 
                 <a class="nav-link" href="{{route('auth.staff')}}">
                     <i class="fa-sharp fa-solid fa-user"></i>
                     <span class="menu-title">.     Staff</span>

@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <link rel="icon" type="image/png" href="{{ asset('image/Favicon/TTD.png') }}" style="border-radius:50px">
 
     <title>Shoppingg - Fashion </title>
     <link rel="stylesheet" href="{{asset('customer_css/detail_product.css')}}">

@@ -6,34 +6,37 @@
                 <div class="col-12 grid-margin">
                     <div class="card">
                         <div class="card-body">
-                            <div class="image-button">
-                                <div class="image">
-                                    <img src="{{ asset('image/eiu.jpg') }}" alt="profile">
-                                </div>
-                                <div class="text">
-                                    <div class="card-body-1">
-                                        <h3>Profile</h3>
-                                        <h6>Update your photo and personal details </h6>
+                            <form action="{{ route('update.profile.admin') }}" class="form-sample" method="POST"
+                                enctype="multipart/form-data">
+                                @csrf
+                                    <div class="image-button">
+                                        <div class="image">
+                                            <img src="{{ asset('image/Avatar/'. $users->avatar) }}" alt="profile" >
+                                        </div>
+                                        <div class="text">
+                                            <div class="card-body-1">
+                                                <h3>Profile</h3>
+                                                <h6>Update your photo and personal details </h6>
+                                            </div>
+                                        </div>
+                                        <div class="button">
+                                            <div class="card-body">
+                                                <a href="{{ route('home.admin') }}"
+                                                    class="badge badge-gradient-success1">Cancel</a>
+                                                <input type="hidden" value="{{ $users->id }}" name="id" />
+                                                <button type="submit" class="badge badge-gradient-success"
+                                                    style="border: none">Save</button>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="button">
                                     <div class="card-body">
-                                        <a href="">Cancel</a>
-                                        <a href="">Save</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                @foreach ($user as $data)
-                                    <form action="" class="form-sample" method="POST" enctype="multipart/form-data">
-                                        @csrf
                                         <div class="row">
                                             <div class="col-md-9">
                                                 <div class="form-group row">
                                                     <label class="col-sm-3 col-form-label"> Username </label>
                                                     <div class="col-sm-9">
                                                         <input type="text" class="form-control" placeholder="Name"
-                                                            required name="name" value="{{$data->name}}"/>
+                                                            required name="name" value="{{ $users->name }}" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -44,7 +47,7 @@
                                                     <label class="col-sm-3 col-form-label"> Email </label>
                                                     <div class="col-sm-9">
                                                         <input type="email" class="form-control" placeholder="Email"
-                                                            required name="email" value="{{$data->email}}"/>
+                                                            required name="email" value="{{ $users->email }}" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -54,8 +57,9 @@
                                                 <div class="form-group row">
                                                     <label class="col-sm-3 col-form-label"> Password </label>
                                                     <div class="col-sm-9">
-                                                        <input type="password" class="form-control" placeholder="Password"
-                                                            required name="password" value="{{$data->password}}"/>
+                                                        {{-- <input type="password" class="form-control" placeholder="Password"
+                                                            required name="password" value="{{$data->password}}"/> --}}
+                                                        <a href="{{route('display.change.pwd')}}" class="badge badge-gradient-success1">Change</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -65,22 +69,20 @@
                                                 <div class="form-group row">
                                                     <label class="col-sm-3 col-form-label"> Your Photo </label>
                                                     <div class="col-sm-9">
-                                                        <img src="{{ asset('image/eiu.jpg') }}" alt="profile">
+                                                        <img src="{{ asset('image/Avatar/'. $users->avatar) }}" alt="profile">
                                                         <div class="col-sm-9">
-                                                            <div>
-                                                                <a href="" class="file-delete">Delete</a>
-                                                                <input type="file" class="file-input">
-                                                            </div>
+                                                            {{-- <a href="" class="file-delete">Delete</a> --}}
+                                                            <input type="file" class="file-input-1" name="avatar">
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </form>
-                                @endforeach
-                            </div>
+                                    </div>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
-        @endsection
+        </div>
+    @endsection
