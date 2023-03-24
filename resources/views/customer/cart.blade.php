@@ -11,11 +11,15 @@
                                     <a href="#" class="product-image">
                                         <img style= "width:20%" src="{{asset('image/Product/'. $data->product_image)}}" class="cart-thumb" alt="">
                                         <div class="cart-item-desc">
-                                            <span class="badge">{{ $data->brand_id }}</span>
+                                                @foreach ($brand as $data1)
+                                                    @if ($data1->id == $data->brand_id)
+                                                        <span class="badge">{{ $data1->name }}</span>
+                                                    @endif
+                                                @endforeach
                                             <h6>{{ $data->product_name }}</h6>
                                             <p class="size">Size: S</p>
                                             <p class="color">Color: Red</p>
-                                            <p class="price">{{ $data->product_price }}</p>
+                                            <p class="price">{{ $data->product_price }}</p> 
                                         </div>
                                     </a>
                                 </div>

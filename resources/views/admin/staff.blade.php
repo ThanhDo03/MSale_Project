@@ -22,8 +22,8 @@
                                             <tr>
                                                 <td>{{ $data->name }}</td>
                                                 <td>{{ $data->email }}</td>
-                                                @if (Auth::user()->email == 'ducthangk59@gmail.com')
-                                                    @if ($data->name == 'DucThang')
+                                                @if (Auth::user()->email == 'hoangthitra09@gmail.com')
+                                                    @if ($data->name == 'TraTra')
                                                         <td>
                                                             <h6 style="color: red">Admin</h6>
                                                             <a href="{{ route('add.account') }}">
@@ -34,11 +34,11 @@
                                                         </td>
                                                     @else
                                                         <td>
-                                                            <a href="{{ route('update.product', $data->id) }}">
+                                                            <a href="">
                                                                 <button style="border: none"
                                                                     class="badge badge-gradient-success">EDIT</button>
                                                             </a>
-                                                            <a href="{{ route('delete.product', $data->id) }}">
+                                                            <a href="">
                                                                 <button style="border: none"
                                                                     class="badge badge-gradient-danger"
                                                                     onclick="FunctionDelete()">DELETE</button>
@@ -46,7 +46,7 @@
                                                         </td>
                                                     @endif
                                                 @else
-                                                    @if ($data->name == 'DucThang')
+                                                    @if ($data->name == 'TraTra')
                                                         <td>Management</td>
                                                     @else
                                                         <td>

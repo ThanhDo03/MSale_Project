@@ -1,6 +1,6 @@
 @extends('admin.layout.index')
 @section('body')
-    <div class="main-panel">
+    <div class="main-panel-1">
         <div class="content-wrapper">
             <div class="row">
                 <div class="col-12 grid-margin">
@@ -39,7 +39,6 @@
                                                             onclick="FunctionDelete()">DELETE</button>
                                                     </a>
                                                 </td>
-
                                             </tr>
                                         </tbody>
                                     @endforeach

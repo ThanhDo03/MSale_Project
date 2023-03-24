@@ -58,6 +58,8 @@ Route::get('/BrandEdit/{id}',[BrandController::class, 'edit'])->name('brand.edit
 Route::post('/BrandUpdate/{id}',[BrandController::class, 'update'])->name('brand.update');
 // Function Delete Brand Admin-Staff
 Route::get('/BrandDelete/{id}',[BrandController::class, 'destroy'])->name('brand.destroy');
+// Display Profile
+Route::get('/Profile/{id}',[UserController::class, 'displayProfile'])->name('display.profile');
 
 // Function Admin Upload Product
 Route::post('/UploadProduct',[ProductController::class, 'store'])->name('add.product');

@@ -3,7 +3,7 @@
     <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
             <li class="nav-item nav-profile">
-                <a href="#" class="nav-link">
+                <a href="{{route('display.profile',Auth::user()->id)}}" class="nav-link">
                   <div class="nav-profile-image">
                     <img src="{{asset('image/eiu.jpg')}}" alt="profile">
                     <!--change to offline or busy as needed-->
