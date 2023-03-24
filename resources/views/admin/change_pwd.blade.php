@@ -8,13 +8,15 @@
                         <div class="card-body">
                             <h4>Change Password <i class="fa-sharp fa-solid fa-lock"></i></h4>
                             @if (session('errorPwd'))
-                                <script>alert("{{ session('errorPwd') }}")</script>
+                                <script>
+                                    alert("{{ session('errorPwd') }}")
+                                </script>
                             @endif
                         </div>
                         <div class="card-body">
                             <div class="row">
                                 <div class="card-body">
-                                    <form action="{{route('pwd.new')}}" method="POST" enctype="multipart/form-data">
+                                    <form action="{{ route('pwd.new') }}" method="POST" enctype="multipart/form-data">
                                         @csrf
                                         <div class="col-md-9">
                                             <div class="form-group row">
@@ -24,7 +26,12 @@
                                                 </div>
                                                 <div class="col-sm-90">
                                                     <input type="password" class="form-control"
-                                                        placeholder="Current Password" required name="password" id="password"/>
+                                                        placeholder="Current Password" name="old_password"  />
+                                                    @if ($errors->has('password'))
+                                                        <span style="color:red">
+                                                            {{ $errors->first('password') }}
+                                                        </span>
+                                                    @endif
                                                 </div>
                                             </div>
 
@@ -35,7 +42,12 @@
                                                 </div>
                                                 <div class="col-sm-90">
                                                     <input type="password" class="form-control" placeholder="New Password"
-                                                        required name="new_password" id="new_password" />
+                                                        name="password"  />
+                                                    @if ($errors->has('password'))
+                                                        <span style="color:red">
+                                                            {{ $errors->first('password') }}
+                                                        </span>
+                                                    @endif
                                                 </div>
                                             </div>
 
@@ -46,17 +58,24 @@
                                                 </div>
                                                 <div class="col-sm-90">
                                                     <input type="password" class="form-control"
-                                                        placeholder="Confirm Password" required name="confirm_password" id="confirm_password"/>
+                                                        placeholder="Confirm Password" name="confirm_password" />
+                                                    @if ($errors->has('confirm_password'))
+                                                        <span style="color:red">
+                                                            {{ $errors->first('confirm_password') }}
+                                                        </span>
+                                                    @endif
                                                 </div>
                                             </div>
 
                                             <div class="form-group row">
                                                 <div class="col-sm-90">
-                                                    <input type="hidden" id="id" name="id" value="{{Auth::user()->id}}">
+                                                    <input type="hidden" id="id" name="id"
+                                                        value="{{ Auth::user()->id }}">
                                                     <button type="submit"
                                                         class="btn btn-gradient-primary mr-2">Save</button>
 
-                                                    <a href="" class="btn btn-light">Back</a>
+                                                    <a href="{{ route('display.profile', Auth::user()->id) }}"
+                                                        class="btn btn-light">Back</a>
                                                 </div>
                                             </div>
                                         </div>

@@ -7,6 +7,7 @@ use App\Models\Product;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\RequestPassword;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
 
@@ -142,28 +143,24 @@ class UserController extends Controller
     }
 
     // Function Change Pwd Admin
-    public function changePwd(Request $request){
-        $validator = Validator::make($request->all(), [
-            'password'        => 'required',
-            'new_password'         => 'required|min:8|max:30',
-            'confirm_password' => 'required|same:new_password'
-        ]);
-        if ($validator->fails()) {
-            return response()->json([
-                'message' => 'validations fails',
-                'errors' => $validator->errors()
-            ], 422);
-        }
-        $user = User::findOrFail($request->id);
-
+    public function changePwd(RequestPassword $request){
+        // $validator = Validator::make($request->all(), [
+        //     'password'        => 'required',
+        //     'new_password'         => 'required|min:8|max:30',
+        //     'confirm_password' => 'required|same:new_password'
+        // ]);
+        // if ($validator->fails()) {
+        //     return response()->json([
+        //         'message' => 'validations fails',
+        //         'errors' => $validator->errors()
+        //     ], 422);
+        // }
         // $user = $request->user();
-        if (Hash::check($request->password,$user->password)) {
-            $user = User::findOrFail($request->id);
-            $user->password = bcrypt($request->new_password);
-            $user->save();
-            // $user->fill([
-            //     'password' => Hash::make($request->new_password)
-            // ])->save();
+
+        $users = User::findOrFail($request->id);
+        if (Hash::check($request->old_password, $users->password)) {
+            $users->password = bcrypt($request->password); 
+            $users->save();
 
             $products = Product::all();
             return redirect()
