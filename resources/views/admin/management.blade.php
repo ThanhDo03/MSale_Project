@@ -6,7 +6,7 @@
                 <div class="col-12 grid-margin">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="card-title">Product For Shopping <i class="fa-sharp fa-solid fa-cart-shopping"></i>
+                            <h4 class="card-title">Product for Shopping <i class="fa-sharp fa-solid fa-cart-shopping"></i>
                             </h4>
                             <div class="table-responsive">
                                 <table class="table">
