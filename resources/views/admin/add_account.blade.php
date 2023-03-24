@@ -8,7 +8,7 @@
                         <h4 class="card-title"> Management Team </h4>
                         <form class="form-sample" method="POST" enctype="multipart/form-data" action="{{route('upload.account.admin')}}">
                             @csrf
-                            <p class="card-description"> Personal Info <i class="fa-sharp fa-solid fa-user"></i> </p>
+                            <p class="card-description"> Personal info <i class="fa-sharp fa-solid fa-user"></i> </p>
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group row">

@@ -6,7 +6,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">Management Team</h4>
-                        <p class="card-description">  UpDate Product <i class="fa-sharp fa-solid fa-pen"></i></p>
+                        <p class="card-description">  Update Product <i class="fa-sharp fa-solid fa-pen"></i></p>
                         <form class="forms-sample" method="POST" enctype="multipart/form-data"
                             action="{{ route('update.product.success') }}">
                             @csrf

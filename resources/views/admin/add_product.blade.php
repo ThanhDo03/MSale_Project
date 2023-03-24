@@ -6,7 +6,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">Management Team</h4>
-                        <p class="card-description"> + Upload Product <i class="fa-sharp fa-solid fa-upload"></i></p>
+                        <p class="card-description"> Upload Product <i class="fa-sharp fa-solid fa-upload"></i></p>
                         <form class="forms-sample" method="POST" enctype="multipart/form-data" action="{{route('add.product')}}">
                             @csrf
                             <div class="form-group">
