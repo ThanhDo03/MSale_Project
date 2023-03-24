@@ -8,9 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" type="image/png" href="{{ asset('image/Favicon/TTD.png') }}" style="border-radius:50px">
 
+    <link rel="stylesheet" href="{{asset('css/style_welcome.css')}}">
     <title>Shoppingg - Fashion </title>
     <link rel="stylesheet" href="{{asset('customer_css/detail_product.css')}}">
-    <link rel="icon" href="img/core-img/favicon.ico">
+    
     <link rel="stylesheet" href="https://kit.fontawesome.com/f52718c374.css" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/f52718c374.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{asset('customer_css/core-style.css')}}">

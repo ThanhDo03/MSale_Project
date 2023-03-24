@@ -63,7 +63,14 @@
                         <li><a href="blog.html">Blog</a></li>
                         @if (Route::has('auth.signin'))
                             @auth
-                                <li><a href="contact.html"> <i class="fa-sharp fa-solid fa-user"></i> {{Auth::user()->email}} </a></li>
+                                <li>
+                                    <a href="contact.html"> <i class="fa-sharp fa-solid fa-user"></i> {{Auth::user()->email}} </a>
+                                        <ul class="dropdown">
+                                            <li><a href=""><i class="fa-sharp fa-solid fa-user"></i> Profile </a></li>
+                                            <li><a href="{{url('/ShowCart',Auth::id())}} "><i class="fa-sharp fa-solid fa-bag-shopping"></i> Cart </a></li>
+                                            <li><a href="{{url('/Logout')}}"><i class="fa-sharp fa-solid fa-right-from-bracket"></i> Logout </a></li>
+                                        </ul>
+                                </li>
                             @else
                                 <li><a href="{{route('welcome')}}">Sign In</a></li>
                             @endauth
@@ -84,9 +91,9 @@
                 </form>
             </div>
             
-            <div class="user-login-info">
+            {{-- <div class="user-login-info">
                 <a href="{{url('/Logout')}}"><i class="fa-sharp fa-solid fa-right-from-bracket"></i></a>
-            </div>
+            </div> --}}
             <div class="cart-area">
                 <a href="{{url('/ShowCart',Auth::id())}}" id="rightSideCart"><i class="fa-sharp fa-solid fa-bag-shopping"></i><span>3</span></a>
             </div>

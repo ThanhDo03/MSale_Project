@@ -24,7 +24,7 @@ use Illuminate\Database\Schema\Blueprint;
 
 // Display Welcome
 Route::get('/Welcome', function () {
-    return view('welcome');
+    return view('customer.welcome');
 })->name('welcome');
 // Sign In
 Route::post('/SignIn',[UserController::class, 'login'])->name('auth.signin');
