@@ -8,7 +8,6 @@
     <script src="{{ asset('customer_js/index.js') }}"></script>
     <script src="{{ asset('customer_js/detail_product.js') }}"></script>
     
-
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
     <script>
         window.dataLayer = window.dataLayer || [];

@@ -6,9 +6,6 @@
                 <div class="col-12 grid-margin">
                     <div class="card">
                         <div class="card-body">
-                            @if (session('successPwd'))
-                                <script>alert("{{ session('successPwd') }}")</script>
-                            @endif
                             <h4 class="card-title">Product for Shopping <i class="fa-sharp fa-solid fa-cart-shopping"></i>
                             </h4>
                             <div class="table-responsive">
@@ -31,7 +28,7 @@
                                                 <tr>
                                                     <td>{{ $product->product_name }}</td>
                                                     <td>{{ $product->brand->name }}</td>
-                                                    <td>{{ $product->product_price }}</td>
+                                                    <td>${{ $product->product_price }}</td>
                                                     <td>
                                                         <img src="{{ asset('image/Product/' . $product->product_image) }}"
                                                             class="mr-2" alt="image">

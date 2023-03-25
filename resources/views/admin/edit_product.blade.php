@@ -26,9 +26,9 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="exampleInputEmail3">Price</label>
-                                <input type="text" class="form-control" id="exampleInputEmail3" placeholder="Price"
-                                    name="price_product" value="{{$product->product_price}}">
+                                <label for="exampleInputEmail3">Price - $</label>
+                                <input type="text" class="form-control" id="exampleInputEmail3" placeholder="Price - $"
+                                    name="price_product" value="{{ $product->product_price }}">
                             </div>
                           
                             <div class="form-group">

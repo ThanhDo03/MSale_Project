@@ -144,6 +144,20 @@ class UserController extends Controller
 
     // Function Change Pwd Admin
     public function changePwd(RequestPassword $request){
+        $users = User::findOrFail($request->id);
+        // $current_users = auth()->user();
+        if (Hash::check($request->old_password, $users->password)) {
+            $users->update([
+                'password'=>bcrypt($request->password)
+            ]);
+            return redirect()
+                ->back()
+                ->with('successPwd', 'Password changed');
+        } else {
+            return redirect()
+                ->back()
+                ->with('errorPwd','Password does not match');
+        }
         // $validator = Validator::make($request->all(), [
         //     'password'        => 'required',
         //     'new_password'         => 'required|min:8|max:30',
@@ -156,19 +170,5 @@ class UserController extends Controller
         //     ], 422);
         // }
         // $user = $request->user();
-
-        $users = User::findOrFail($request->id);
-        if (Hash::check($request->old_password, $users->password)) {
-            $users->password = bcrypt($request->password); 
-            $users->save();
-
-            $products = Product::all();
-            return redirect()
-                ->route('home.admin', compact('products'))
-                ->with('successPwd', 'Password changed');
-        } else {
-            return redirect()->back()
-                ->with('errorPwd','Password does not match');
-        }
     }
 }

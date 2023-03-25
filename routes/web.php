@@ -67,7 +67,7 @@ Route::post('/UpdateProfile',[UserController::class,'updateProfile'])->name('upd
 // Display Change Password Admin
 Route::get('/ChangePass',[UserController::class, 'Password'])->name('display.change.pwd');
 // Function Change Pwd Admin
-Route::post('NewPwd',[UserController::class,'changePwd'])->name('pwd.new');
+Route::post('/NewPwd',[UserController::class,'changePwd'])->name('pwd.new');
 
 // Function Admin Upload Product
 Route::post('/UploadProduct',[ProductController::class, 'store'])->name('add.product');

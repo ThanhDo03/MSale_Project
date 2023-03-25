@@ -44,9 +44,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <div class="section-heading text-center">
-                        <h2></h2>
-                    </div>
+                    @if (session('success_cart'))
+                        <script>alert("{{ session('success_cart') }}")</script>
+                        {{-- <div class="section-heading text-center">
+                            {{session('success_cart')}}
+                        </div> --}}
+                    @endif
                 </div>
             </div>
         </div>
@@ -62,7 +65,7 @@
                                         <img src="{{ asset('image/Product/' . $productdata->product_image) }}"
                                             alt="">
 
-                                        <img class="hover-img" src="img/product-img/product-2.jpg" alt="">
+                                        <img class="hover-img" src="" alt="">
 
                                         <div class="product-favourite">
                                             <a href="#" class="favme fa fa-heart"></a>
@@ -74,7 +77,7 @@
                                         <a href="{{route('detail.product', $productdata->id)}}">
                                             <h6>{{ $productdata->product_name }}</h6>
                                         </a>
-                                        <p class="product-price">{{ $productdata->product_price }}</p>
+                                        <p class="product-price">${{ $productdata->product_price }}</p>
 
                                         <div class="hover-content">
 
@@ -85,6 +88,7 @@
                                                         name="customer_id">
                                                     <button type="submit" class="btn essence-btn">Add to Cart</button>
                                                 </form>
+                                                {{-- <a href="{{ route('cart.product', $productdata->id) }}"><button class="btn essence-btn">Add to Cart</button></a> --}}
                                             </div>
                                         </div>
                                     </div>
@@ -136,7 +140,7 @@
                                     <div class="product-img">
                                         <img src="{{ asset('image/Product/' . $data->product_image) }}" alt="">
 
-                                        <img class="hover-img" src="img/product-img/product-2.jpg" alt="">
+                                        <img class="hover-img" src="" alt="">
 
                                         <div class="product-favourite">
                                             <a href="#" class="favme fa fa-heart"></a>
@@ -148,7 +152,7 @@
                                         <a href="single-product-details.html">
                                             <h6>{{ $data->product_name }}</h6>
                                         </a>
-                                        <p class="product-price">{{ $data->product_price }}</p>
+                                        <p class="product-price">${{ $data->product_price }}</p>
 
                                         <div class="hover-content">
 

@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('product_name')->unique();;
             $table->unsignedBigInteger('brand_id');
             $table->foreign('brand_id')->references('id')->on('brand');
-            $table->string('product_price');
+            $table->integer('product_price');
             $table->string('product_image');
             $table->integer('product_amount');
             $table->string('Staff');

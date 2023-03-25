@@ -12,6 +12,11 @@
                                     alert("{{ session('errorPwd') }}")
                                 </script>
                             @endif
+                            @if (session('successPwd'))
+                                <script>
+                                    alert("{{ session('successPwd') }}")
+                                </script>
+                            @endif
                         </div>
                         <div class="card-body">
                             <div class="row">
@@ -22,7 +27,7 @@
                                             <div class="form-group row">
                                                 <div class="col-sm-90">
                                                     <label class="col-sm-3 col-form-label"> Current Password <i
-                                                            class="fa-sharp fa-solid fa-unlock-keyhole"></i></label>
+                                                            class="fa-sharp fa-solid fa-unlock-keyhole"></i></label> 
                                                 </div>
                                                 <div class="col-sm-90">
                                                     <input type="password" class="form-control"

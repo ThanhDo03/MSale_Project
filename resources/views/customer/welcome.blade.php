@@ -5,10 +5,10 @@
             <div class="row new_arrivals_area1">
                 {{-- <h2>Shoppingg</h2> --}}
                 @if (session('error1'))
-                    <h5 style="color: red">{{ session('error1') }}</h5>
+                    <h5 style="color: red; font-size: 12px">{{ session('error1') }}</h5>
                 @endif
                 @if (session('message'))
-                    <h5 style="color: #77a7ff">{{ session('message') }}</h5>
+                    <h5 style="color: #77a7ff; font-size: 12px">{{ session('message') }}</h5>
                 @endif
                 <div class="container1" id="container">
                     <div class="form-container1 sign-up-container1">
@@ -40,7 +40,7 @@
                             <input class="input" type="email" placeholder="Email" name="email_name" required />
                             <input class="input" type="password" placeholder="Password" name="pwd" required />
                             @if (session('error'))
-                                <h5 style="color: red">{{ session('error') }}</h5>
+                                <h5 style="color: red; font-size: 12px">{{ session('error') }}</h5>
                             @endif
                             <a href="#" class="a">Forgot your password?</a>
                             <button type="submit" class="but">Sign In</button>

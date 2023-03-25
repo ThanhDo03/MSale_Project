@@ -24,7 +24,7 @@
 
                                 <div class="product-img">
                                     <a href=""><img src="{{ asset('image/Product/'.$data->product_image)}}" alt=""></a>
-                                    <a href=""><img class="hover-img" src="img/product-img/product-2.jpg" alt=""></a>
+                                    <a href=""><img class="hover-img" src="" alt=""></a>
                                     <div class="product-favourite">
                                         <a href="#" class="favme fa fa-heart"></a>
                                     </div>
