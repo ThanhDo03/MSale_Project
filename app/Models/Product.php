@@ -17,5 +17,9 @@ class Product extends Model
         return $this->belongsTo('App\Models\Brand', 'brand_id');
     }
 
+    public function cart_items(){
+        return $this->belongsTo('App\Models\Cart_Items','product_id');
+    }
+
     protected $fillable = ['product_name', 'brand_id', 'product_price', 'product_image', 'product_amount','Staff','Status','product_des','sale'];
 }

@@ -89,15 +89,18 @@ class ProductController extends Controller
 
     // Function Search Product Customer
     public function search(Request $request){
-        $search = $request->ProductSearch;
-        $product = Product::where('product_name', 'LIKE', '%'.$search.'%')->get();
+        $search = $request->input('query');
+        $products = Product::where('product_name', 'LIKE', '%'.$search.'%')
+                ->orWhere('brand_id->brand->name', 'LIKE', '%'.$search.'')
+                ->get();
+        //
         $cartItems = Cart_Items::where('customer_id', auth()->id())->get();
         $total = $cartItems->sum('total');
         $cartCount = count($cartItems); 
         $percent = 15 / 100;
         $percent1 = $percent * $total;
         $percent_15 = $total - $percent1;
-        return view('customer.search_product', compact('product','cartItems','total','cartCount','percent_15'), ['successMsg'=>'Search results for'.$search]);
+        return view('customer.search_product')
+            ->with(compact('products','cartItems','total','cartCount','percent_15','search'));
     }
-
 }
