@@ -88,21 +88,29 @@ class CustomerController extends Controller
     }
 
     // Display Cart - Customer
-    public function showCart($id)
+    public function showCart($id_customer)
     {
         if (Auth::user()) {
-            $data = DB::table('cart_items')
-                ->where('customer_id', $id)
-                ->get();
-            if ($data) {
-                $brand = Brand::all();
-                $cart_items = DB::table('cart_items')
-                    ->join('product', 'cart_items.product_id', '=', 'product.id')
-                    ->select('cart_items.*', 'product.product_name', 'product.product_price', 'product.product_image', 'product.brand_id')
-                    ->where('cart_items.customer_id', $id)
-                    ->get();
+            $cartItems = Cart_Items::where('customer_id', $id_customer)->get();
+
+            // $cartItems = DB::table('cart_items')
+            //     ->where('customer_id', $id_customer)
+            //     ->get();
+            if ($cartItems) {
+                // $brand = Brand::all();
+                // $cart_items = DB::table('cart_items')
+                //     ->join('product', 'cart_items.product_id', '=', 'product.id')
+                //     ->select('cart_items.*', 'product.product_name', 'product.product_price', 'product.product_image', 'product.brand_id')
+                //     ->where('cart_items.customer_id', $id)
+                //     ->get();
                 // dd($cart_items);
-                return view('customer.cart', compact('cart_items', 'brand'));
+                $total = $cartItems->sum('total');
+                $cartCount = count($cartItems); 
+        
+                $percent = 15 / 100;
+                $percent1 = $percent * $total;
+                $percent_15 = $total - $percent1;
+                return view('customer.cart', compact('cartItems','total','cartCount','percent_15'));
             } else {
                 $cart_items = Cart_Items::all();
                 $cart_items = Product::all();

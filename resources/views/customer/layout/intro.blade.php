@@ -89,7 +89,7 @@
             <div class="search-area">
                 <form action="{{ route('customer.search') }}" method="POST" enctype="multipart/form-data">
                     @csrf
-                    <input type="search" name="ProductSearch" id="ProductSearch" placeholder="Type for search">
+                    <input type="search" name="query" id="query" placeholder="Search products...">
                     <button type="submit"><i class="fa-sharp fa-solid fa-magnifying-glass"></i></button>
                 </form>
             </div>
@@ -163,7 +163,7 @@
             </ul>
             <div class="checkout-btn mt-100">
                 <a href="checkout.html" class="btn essence-btn">check out</a>
-                <a href="" class="btn essence-btn">view all</a>
+                <a href="{{ url('/ShowCart', Auth::id()) }}" class="btn essence-btn">view all</a>
             </div>
         </div>
     </div>

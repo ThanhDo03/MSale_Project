@@ -424,11 +424,20 @@ a>code {
     width: 100%;
     max-width: 100%;
     margin-bottom: 1rem;
-    background-color: transparent
+    background-color: transparent;
+    text-align: center
 }
 
 .table .table {
     background-color: #fff
+}
+
+.table th{
+    background-color: #e9ecef;
+    height: 35px;
+}
+.table td{
+    border-top: 2px solid #e9ecef;
 }
 
 .form-control {
