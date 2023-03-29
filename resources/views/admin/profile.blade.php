@@ -46,8 +46,9 @@
                                                 <div class="form-group row">
                                                     <label class="col-sm-3 col-form-label"> Email </label>
                                                     <div class="col-sm-9">
-                                                        <input type="email" class="form-control" placeholder="Email"
-                                                            required name="email" value="{{ $users->email }}" />
+                                                        {{-- <input type="email" class="form-control" placeholder="Email"
+                                                            required name="email" value="{{ $users->email }}" /> --}}
+                                                        <h6 class="form-control">{{ $users->email }}</h6>
                                                     </div>
                                                 </div>
                                             </div>
@@ -56,7 +57,8 @@
                                             <div class="col-md-9">
                                                 <div class="form-group row">
                                                     <label class="col-sm-3 col-form-label"> Password </label>
-                                                    <div class="col-sm-9">
+                                                    {{-- <a href="{{route('display.change.pwd')}}" class="badge badge-gradient-success1">Change</a> --}}
+                                                    <div class="col-sm-9 fix">
                                                         {{-- <input type="password" class="form-control" placeholder="Password"
                                                             required name="password" value="{{$data->password}}"/> --}}
                                                         <a href="{{route('display.change.pwd')}}" class="badge badge-gradient-success1">Change</a>
@@ -72,7 +74,8 @@
                                                         <img src="{{ asset('image/Avatar/'. $users->avatar) }}" alt="profile">
                                                         <div class="col-sm-9">
                                                             {{-- <a href="" class="file-delete">Delete</a> --}}
-                                                            <input type="file" class="file-input-1" name="avatar">
+                                                            <label for="file" class="label-photo">Choose an avatar</label>
+                                                            <input type="file" id="file" class="input-file" name="avatar" accept="image/*">
                                                         </div>
                                                     </div>
                                                 </div>

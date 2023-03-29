@@ -17,7 +17,7 @@
 
                 <div class="classynav">
                     <ul>
-                        <li><a href="#">Shop</a>
+                        <li><a href="{{ route('customer') }}">Shop</a>
                             <div class="megamenu">
                                 <ul class="single-mega cn-col-4">
                                     <li class="title">Women's Collection</li>
@@ -51,9 +51,8 @@
                         <li><a href="#">Pages</a>
                             <ul class="dropdown">
                                 <li><a href="{{ route('customer') }}">Home</a></li>
-                                <li><a href="shop.html">Shop</a></li>
                                 <li><a href="single-product-details.html">Product Details</a></li>
-                                <li><a href="checkout.html">Checkout</a></li>
+                                <li><a href="{{route('customer.checkout')}}">Checkout</a></li>
                                 <li><a href="blog.html">Blog</a></li>
                                 <li><a href="single-blog.html">Single Blog</a></li>
                                 <li><a href="regular-page.html">Regular Page</a></li>
@@ -64,10 +63,10 @@
                         @if (Route::has('auth.signin'))
                             @auth
                                 <li>
-                                    <a href="contact.html"> <i class="fa-sharp fa-solid fa-user"></i>
-                                        {{ Auth::user()->email }} </a>
+                                    <a href="{{route('show.account')}}"> <i class="fa-sharp fa-solid fa-user"></i>
+                                        {{ Auth::user()->name }} </a>
                                     <ul class="dropdown">
-                                        <li><a href=""><i class="fa-sharp fa-solid fa-user"></i> Profile </a></li>
+                                        <li><a href="{{route('show.account')}}"><i class="fa-sharp fa-solid fa-user"></i> Profile </a></li>
                                         <li><a href="{{ url('/ShowCart', Auth::id()) }} "><i
                                                     class="fa-sharp fa-solid fa-bag-shopping"></i> Cart </a></li>
                                         <li><a href="{{ url('/Logout') }}"><i
@@ -162,7 +161,7 @@
                 </li>
             </ul>
             <div class="checkout-btn mt-100">
-                <a href="checkout.html" class="btn essence-btn">check out</a>
+                <a href="{{route('customer.checkout')}}" class="btn essence-btn">check out</a>
                 <a href="{{ url('/ShowCart', Auth::id()) }}" class="btn essence-btn">view all</a>
             </div>
         </div>

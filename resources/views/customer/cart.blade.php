@@ -14,7 +14,6 @@
             <div class="row">
                 <div class="col-12">
                     <div class="cta-content bg-img background-overlay">
-
                         <table class="summary-table table">
                             <thead>
                                 <tr>
@@ -60,7 +59,7 @@
                                                 </tr>
                                             @endforeach
                                         </div>
-                                    </div>
+                                    </div>  
                                 </div>
                             </tbody>
                         </table>

@@ -60,7 +60,7 @@ img {
     outline: 0;
     font-size: 14px;
     font-weight: 400;
-    color: #1abc9c
+    color: #ff084e
 }
 
 .classy-navbar .nav-brand,.classy-navbar .nav-brand:focus,.classy-navbar .nav-brand:hover {
@@ -103,9 +103,10 @@ img {
 }
 
 .classy-navbar .nav-brand {
-    color: #565656;
+    color: #ff084e;
     display: inline-block;
-    margin-right: 30px
+    margin-right: 30px;
+    text-decoration: none;
 }
 
 .classynav ul li {

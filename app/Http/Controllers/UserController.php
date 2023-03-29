@@ -120,7 +120,7 @@ class UserController extends Controller
                 if($request->avatar != null){
                     $imageName = $request->file('avatar')->getClientOriginalName();
                     $request->avatar->move(public_path('image/Avatar'), $imageName);
-                    if ($user_edit->avatar) {
+                    if ($user_edit->avatar) { 
                         $oldImagePath = public_path('image/Avatar/' . $user_edit->avatar);
                         if (file_exists($oldImagePath)) {
                             unlink($oldImagePath);
