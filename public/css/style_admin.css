@@ -18804,51 +18804,40 @@ dl li {
 }
 /*# sourceMappingURL=style.css.map */
 
-.file-input-1::-webkit-file-upload-button {
-    visibility: hidden;
-}
-.file-input-1::before {
-    content: 'Choose an avatar';
-    display: inline-block;
-    background: linear-gradient(top, #f9f9f9, #e3e3e3);
-    border: 1px solid #999;
-    border-radius: 3px;
-    padding: 5px 8px;
-    outline: none;
-    white-space: nowrap;
-    -webkit-user-select: none;
-    cursor: pointer;
-    text-shadow: 1px 1px #fff;
-    font-weight: 700;
-    font-size: 10pt;
-}
-.file-input-1:hover::before {
-    border-color: black;
-}
-.file-input-1:active::before {
-    background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
-}
-.file-delete{
-    display: inline-block;
-    text-decoration: none;
-    background: linear-gradient(to right, #a0c8e4, #5c8eb2);
-    border: none;
-    border-radius: 3px;
-    padding: 5px 8px;
-    outline: none;
-    white-space: nowrap;
-    font-size: 10pt;
-    color: #ffffff;
-}
-
-.col-sm-9 .file-input-1{
-    margin-left: 5%;
-}
-
 .col-sm-90{
     -webkit-box-flex: 0;
     -ms-flex: 0 0 75%;
     flex: 0 0 100%;
     max-width: 100%;
     text-align: center;
+}
+
+/* CSS Input File */
+.input-file[type='file']{
+    display: none;
+}
+.label-photo{
+  color: white;
+  height: 40px;
+  width: 180px;
+  background: linear-gradient(to right, #a0c8e4, #5c8eb2);
+  position: absolute;
+  margin: auto;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 300;
+  margin-top: 10px;
+  border-radius: 0.125rem;
+}
+.avatar{
+  width: 60%;
+  height: 60%;
+  border-radius: 50%;
+}
+
+.fix{
+    padding-top: calc(0.5rem + 0.5px);
+    padding-bottom: calc(0.5rem + 0.5px);
 }

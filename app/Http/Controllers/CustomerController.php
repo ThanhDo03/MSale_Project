@@ -8,8 +8,7 @@ use App\Models\Cart_Items;
 use App\Models\Product;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-
-
+use App\Models\User;
 class CustomerController extends Controller
 {
     // Display Customer
@@ -112,9 +111,7 @@ class CustomerController extends Controller
                 $percent_15 = $total - $percent1;
                 return view('customer.cart', compact('cartItems','total','cartCount','percent_15'));
             } else {
-                $cart_items = Cart_Items::all();
-                $cart_items = Product::all();
-                return view('customer.cart', compact('cart_items'))->with('msg', 'Your cart is empty!');
+                return view('customer.cart', compact('cartItems'))->with('msg', 'Your cart is empty!');
             }
         } else {
             return redirect()
@@ -143,5 +140,62 @@ class CustomerController extends Controller
         $percent1 = $percent * $total;
         $percent_15 = $total - $percent1;
         return view('customer.detail_product', compact('detail_product', 'cartItems', 'total','cartCount','percent_15'));
+    }
+
+    // Display Profile Customer
+    public function AccountCustomer(){
+        $user = User::where('id', auth()->id())->get();
+        $cartItems = Cart_Items::where('customer_id', auth()->id())->get();
+        $total = $cartItems->sum('total');
+        $cartCount = count($cartItems); 
+        $percent = 15 / 100;
+        $percent1 = $percent * $total;
+        $percent_15 = $total - $percent1;
+        return view('customer.profile', compact('user','cartItems', 'total','cartCount','percent_15'));
+    }
+
+    // Function Update Profile Customer
+    public function updateProfileCustomer(Request $request){
+        if($request->isMethod('POST')){
+            $user_edit = User::find($request->id);
+            if($user_edit != null){
+                $user_edit->name = $request->name;
+                if($request->avatar != null){
+                    $imageName = $request->file('avatar')->getClientOriginalName();
+                    $request->avatar->move(public_path('image/Avatar'), $imageName);
+                    if ($user_edit->avatar) { 
+                        $oldImagePath = public_path('image/Avatar/' . $user_edit->avatar);
+                        if (file_exists($oldImagePath)) {
+                            unlink($oldImagePath);
+                        }
+                    }
+                    $user_edit->avatar = $imageName;
+                }
+                $user_edit->save();
+                return redirect()->back();
+            }
+        }
+        else{
+
+        }
+    }
+
+    // Display Check Out Customer
+    public function DisplayCheckOut(){
+        if(Auth::user()){
+            $cartItems = Cart_Items::where('customer_id', auth()->id())->get();
+            $total = $cartItems->sum('total');
+            $cartCount = count($cartItems); 
+            $percent = 15 / 100;
+            $percent1 = $percent * $total;
+            $percent_15 = $total - $percent1;
+
+            return view('customer.checkout', compact('cartItems','total','cartCount','percent_15'));
+        }else{
+            return redirect()
+                ->route('welcome')
+                ->with('error1', 'You need to log in before checkout your cart!');
+        }
+        
     }
 }

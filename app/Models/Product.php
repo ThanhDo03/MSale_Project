@@ -21,5 +21,13 @@ class Product extends Model
         return $this->belongsTo('App\Models\Cart_Items','product_id');
     }
 
+    public function product_details(){
+        return $this->hasMany(ProductDetails::class, 'product_id','id');
+    }
+
+    public function order_details(){
+        return $this->hasMany(OrderDetails::class, 'product_id','id');
+    }
+
     protected $fillable = ['product_name', 'brand_id', 'product_price', 'product_image', 'product_amount','Staff','Status','product_des','sale'];
 }

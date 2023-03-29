@@ -641,7 +641,39 @@ img {
       @media only screen and (max-width: 767px) {
         .cta-area .cta-content .cta--text {
           padding-right: 0; } }
-
+    .cta--image{
+      height: 100%;
+      width: 30%;
+      padding: 10px;
+    }
+    .cta--profile{
+      width: 70%;
+      height: 80%;
+      padding: 30px;
+    }
+/* CSS Input File */
+.input[type='file']{
+    display: none;
+}
+.label-photo{
+  color: white;
+  height: 40px;
+  width: 215px;
+  background-color: #0315ff;
+  position: absolute;
+  margin: auto;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  margin-top: 10px;
+}
+.avatar{
+  width: 60%;
+  height: 60%;
+  border-radius: 50%;
+}
 /* :: 8.0 Popular Products Area CSS */
 .single-product-wrapper {
   position: relative;

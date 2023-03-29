@@ -5,7 +5,7 @@ use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\BrandController;
-use App\Models\Brand;
+use App\Http\Controllers\CheckOutController;
 use App\Models\Product;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Schema; 
@@ -90,3 +90,11 @@ Route::get('/ShowCart/{id_customer}',[CustomerController::class,'showCart'])->na
 Route::get('/ShowCart',[CustomerController::class,'showCart_NoUser']);
 // Display Detail Product
 Route::get('/DetailProduct/{id}',[CustomerController::class, 'Detail_Product'])->name('detail.product');
+// Display Profile Customer
+Route::get('Account',[CustomerController::class, 'AccountCustomer'])->name('show.account');
+// Function Update Profile Customer
+Route::post('/UpdateProfileCustomer',[CustomerController::class,'updateProfileCustomer'])->name('customer.profile.update');
+// Display Check Out Customer
+Route::get('CheckOut',[CustomerController::class,'DisplayCheckOut'])->name('customer.checkout');
+// Function Check Out Customer
+Route::post('Order',[CheckOutController::class,'AddOrder'])->name('order.customer'); 

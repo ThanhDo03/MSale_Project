@@ -43,7 +43,7 @@
                 <div class="single_widget_area d-flex mb-30">
 
                     <div class="footer-logo mr-50">
-                        <a href="#">Shoppingg</a>
+                        <a href="#" style="color: #ff084e">Shoppingg</a>
                     </div>
 
                     <div class="footer_menu">
