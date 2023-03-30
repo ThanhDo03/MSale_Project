@@ -16885,8 +16885,8 @@ code {
     border-right: 0;
     border-left: 0;
     border-bottom: 0;
-    font: normal normal normal 24px/1 "Material Design Icons";
-    content: "\f140";
+    font: normal normal normal 15px/1 FontAwesome;
+    content: "\f078";
     width: auto;
     height: auto;
     vertical-align: baseline;
@@ -17635,6 +17635,7 @@ dl li {
     font-size: 17px;
     margin-right: 0;
     color: #9c9fa6;
+    padding-top: 14px;
 }
 .navbar .navbar-menu-wrapper .search-field .input-group .input-group-text {
     background: transparent;
@@ -17696,7 +17697,8 @@ dl li {
     }
 }
 .navbar .navbar-menu-wrapper .navbar-nav .nav-item .nav-link i {
-    font-size: 1.25rem;
+    font-size: 1rem;
+    color: #3e4b5b;
 }
 .navbar
     .navbar-menu-wrapper
@@ -17704,7 +17706,7 @@ dl li {
     .nav-item.dropdown
     .dropdown-toggle:after {
     color: #b66dff;
-    font-size: 1rem;
+    font-size: 0.8rem;
 }
 .navbar .navbar-menu-wrapper .navbar-nav .nav-item.dropdown .dropdown-menu {
     border: none;
@@ -17809,8 +17811,8 @@ dl li {
     .nav-link
     .nav-profile-img {
     position: relative;
-    width: 32px;
-    height: 32px;
+    width: 44px;
+    height: 44px;
 }
 .navbar
     .navbar-menu-wrapper
@@ -17819,9 +17821,10 @@ dl li {
     .nav-link
     .nav-profile-img
     img {
-    width: 32px;
-    height: 32px;
+    width: 44px;
+    height: 44px;
     border-radius: 100%;
+    object-fit: contain;
 }
 .navbar
     .navbar-menu-wrapper
@@ -18355,9 +18358,9 @@ dl li {
     vertical-align: middle;
 }
 .sidebar .nav .nav-item .nav-link i.menu-arrow {
-    font: normal normal normal 24px/1 "Material Design Icons";
+    font: normal normal normal 24px/1 FontAwesome;
     line-height: 1;
-    font-size: 1.125rem;
+    font-size: 0.8rem;
     margin-left: auto;
     color: #9e9da0;
 }
@@ -18366,7 +18369,7 @@ dl li {
     margin-right: auto;
 }
 .sidebar .nav .nav-item .nav-link i.menu-arrow:before {
-    content: "\f141";
+    content: "\f078";
     font-size: inherit;
     color: inherit;
 }
@@ -18841,3 +18844,5 @@ dl li {
     padding-top: calc(0.5rem + 0.5px);
     padding-bottom: calc(0.5rem + 0.5px);
 }
+
+

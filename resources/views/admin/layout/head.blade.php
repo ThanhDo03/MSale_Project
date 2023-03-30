@@ -14,8 +14,9 @@
 
     <title>Admin</title>
     <link rel="stylesheet" href="{{asset('/css/style_admin.css')}}">
-    <link rel="stylesheet" href="{{asset('/css/vendors/vendor.bundle.base.css')}}">
-    <link rel="stylesheet" href="{{asset('/css/vendors/materialdesignicons.min.css')}}">
+
+    <link rel="stylesheet" href="{{asset('/css/vendor/vendor.bundle.base.css')}}">
+    <link rel="stylesheet" href="{{asset('/css/vendor/materialdesignicons.min.css')}}">
     <!-- Custom fonts for this template-->
     <link rel="stylesheet" href="https://kit.fontawesome.com/f52718c374.css" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/f52718c374.js" crossorigin="anonymous"></script>

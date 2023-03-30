@@ -111,7 +111,7 @@ class CustomerController extends Controller
                 $percent_15 = $total - $percent1;
                 return view('customer.cart', compact('cartItems','total','cartCount','percent_15'));
             } else {
-                return view('customer.cart', compact('cartItems'))->with('msg', 'Your cart is empty!');
+                return view('customer.welcome', compact('cartItems'))->with('msg', 'Your cart is empty!');
             }
         } else {
             return redirect()
