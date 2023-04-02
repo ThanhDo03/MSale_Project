@@ -19,8 +19,7 @@ class UserController extends Controller
         if (Auth::attempt(['email'=>$req->email_name, 'password'=>$req->pwd])){
             if(Auth::check()){
                 if(Auth::user()->role == 1){
-                    $products = Product::all();
-                    return view('admin.management', compact('products'));
+                    return view('admin.home');
                 }else{
                     return redirect()->route('customer')->with('msg','');
                 }
@@ -46,11 +45,15 @@ class UserController extends Controller
             }
         }
     }
-    
-    // Display Admin Management
-    public function AdminManagement(){
+    // Display Admin Home
+    public function AdminHome(){
+        return view('admin.home');
+    }
+
+    // Display Admin Product
+    public function AdminProduct(){
         $products = Product::all();
-        return view('admin.management', compact('products')); 
+        return view('admin.product', compact('products')); 
     }
 
     // Display Admin Product Sale %

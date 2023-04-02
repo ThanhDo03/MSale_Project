@@ -17,6 +17,10 @@ class Product extends Model
         return $this->belongsTo('App\Models\Brand', 'brand_id');
     }
 
+    public function category(){
+        return $this->belongsTo('App\Models\Category', 'category_id');
+    }
+
     public function cart_items(){
         return $this->belongsTo('App\Models\Cart_Items','product_id');
     }

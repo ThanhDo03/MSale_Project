@@ -8,8 +8,8 @@ use App\Http\Controllers\BrandController;
 use App\Http\Controllers\CheckOutController;
 use App\Models\Product;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Schema; 
-use Illuminate\Database\Schema\Blueprint;
+use App\Http\Controllers\CategoryController;
+use App\Models\Category;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,10 +36,24 @@ Route::get('/Logout', function(){
     return redirect()->route('welcome');
 })->name('logout');
 
+// Display Admin Home
+Route::get('/Home',[UserController::class, 'AdminHome'])->name('home.admin');
 // Display Admin Management
-Route::get('/HomeAdmin',[UserController::class, 'AdminManagement'])->name('home.admin');
+Route::get('/Product',[UserController::class, 'AdminProduct'])->name('product.admin');
 // Display Admin Upload Product
-Route::get('/ShowAddProduct',[UserController::class, 'UploadProduct'])->name('upload.Product');
+Route::get('/AddProduct',[UserController::class, 'UploadProduct'])->name('upload.Product'); // FIX
+// Display Admin Category
+Route::get('/Category',[CategoryController::class, 'index'])->name('category.admin');
+// Display Add Admin Category
+Route::get('/UploadCategory',[CategoryController::class, 'create'])->name('upload.category');
+// Function Add Admin Category
+Route::post('/SuccessCategory',[CategoryController::class, 'store'])->name('category.store');
+// Display Edit Admin Category
+Route::get('/EditCategory/{id}',[CategoryController::class, 'edit'])->name('edit.category');
+// Function Edit Admin Category
+Route::post('/SuccessUpdateCategory/{id}',[CategoryController::class, 'update'])->name('update.category');
+// Function Delete Category Admin
+Route::get('/DeleteCategory/{id}',[CategoryController::class, 'destroy'])->name('delete.category');
 // Display Admin-Staff
 Route::get('/Staff', [UserController::class, 'staff'])->name('auth.staff');
 // Display Add Account Admin-Staff
@@ -47,7 +61,7 @@ Route::get('/AddAccount',[UserController::class, 'showAddAccount'])->name('add.a
 // Function Add Account Admin - Cusstomer
 Route::post('/UploadAccount',[UserController::class, 'store1'])->name('upload.account.admin');
 // Display Brand Admin-Staff
-Route::get('/ShowBrand',[BrandController::class, 'showBrand'])->name('show.brand');
+Route::get('/Brand',[BrandController::class, 'showBrand'])->name('show.brand');
 // Display Add Brand Admin-Staff
 Route::get('/ShowAddBrand',[BrandController::class, 'addBrand'])->name('add.brand');
 // Function Add Brand Admin-Staff
