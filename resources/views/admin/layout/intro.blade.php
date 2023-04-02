@@ -33,7 +33,7 @@
                 </a>
                 <div class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
                   <a class="dropdown-item" href="{{route('display.profile',Auth::user()->id)}}">
-                    <i class="fa-sharp fa-solid fa-user"></i> Profile </a>
+                    <i class="fa-sharp fa-solid fa-user"></i>  Profile </a>
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="{{route('logout')}}">
                     <i class="fa-sharp fa-solid fa-right-from-bracket"></i>  Signout </a>

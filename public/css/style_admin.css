@@ -17742,6 +17742,7 @@ dl li {
     margin-bottom: 0;
     padding: 11px 13px;
     cursor: pointer;
+    color: #16181b;
 }
 .navbar
     .navbar-menu-wrapper
@@ -18747,7 +18748,7 @@ dl li {
     }
 }
 
-.main-panel-1 {
+/* .main-panel-1 {
     -webkit-transition: width 0.25s ease, margin 0.25s ease;
     transition: width 0.25s ease, margin 0.25s ease;
     width: calc(90% - 0px);
@@ -18765,7 +18766,7 @@ dl li {
         margin-left: 0;
         width: 100%;
     }
-}
+} */
 
 .content-wrapper {
     background: #f2edf3;

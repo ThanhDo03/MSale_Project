@@ -16,27 +16,33 @@
             </li> --}}
             <li class="nav-item">
                 <a class="nav-link" href="{{route('home.admin')}}">
-                    <i class="fa-sharp fa-solid fa-shop"></i>
+                    <i class="fa-solid fa-shop fa-sm"></i>
                     <span class="menu-title">.     Home</span>
                 </a>
             </li>
             
             <li class="nav-item">
-                <a class="nav-link" href="../../pages/tables/basic-table.html">
-                    <i class="fa-sharp fa-solid fa-lock"></i>
-                    <span class="menu-title">.     Authorization</span>
+                <a class="nav-link" href="{{route('product.admin')}}">
+                    <i class="fa-solid fa-gear fa-sm"></i>
+                    <span class="menu-title">.     Product</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('category.admin')}}">
+                    <i class="fa-solid fa-gear fa-sm"></i>
+                    <span class="menu-title">.     Category</span>
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{route('show.brand')}}">
-                    <i class="fa-sharp fa-solid fa-truck-fast"></i>
+                    <i class="fa-solid fa-gear fa-sm"></i>
                     <span class="menu-title">.     Brand</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="../../pages/tables/basic-table.html">
-                    <i class="fa-sharp fa-solid fa-file-export"></i>
-                    <span class="menu-title">.     Export</span>
+                <a class="nav-link" href="{{route('logout')}}">
+                    <i class="fa-solid fa-gear fa-sm"></i>
+                    <span class="menu-title">. Import data</span>
                 </a>
             </li>
             <li class="nav-item"> 
@@ -59,17 +65,11 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{route('display.product.sale')}}">
-                    <i class="fa-brands fa-salesforce"></i>
+                    <i class="fa-solid fa-gear fa-sm"></i>
                     <span class="menu-title">.     Product Sale %</span>
                 </a>
             </li>
-            {{-- <li class="nav-item">
-                <a class="nav-link" href="{{route('logout')}}">
-                    <span class="menu-title">    </span>
-
-                    
-                </a>
-            </li> --}}
+            
             
         </ul>
     </nav>

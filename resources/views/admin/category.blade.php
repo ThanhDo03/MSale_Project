@@ -1,4 +1,7 @@
 @extends('admin.layout.index')
+
+@section('title', 'Category')
+
 @section('body')
     <div class="main-panel">
         <div class="content-wrapper">
@@ -7,8 +10,8 @@
                     <div class="card">
                         <div class="card-body">
                             <h4 class="card-title"> Management Team </h4>
-                            <p class="card-description"> Brand <i class="fa-solid fa-gear fa-sm"></i> </p>
-                            <a href="{{ route('add.brand') }}">
+                            <p class="card-description"> Category <i class="fa-solid fa-gear fa-sm"></i> </p>
+                            <a href="{{ route('upload.category') }}">
                                 <button style="border: none"
                                     class="badge badge-gradient-info">ADD</button>
                             </a>
@@ -16,25 +19,22 @@
                                 <table class="table">
                                     <thead>
                                         <tr>
-                                            <th> ID </th>
-                                            <th> Name </th>
-                                            <th> Description </th>
+                                            {{-- <th> ### </th> --}}
+                                            <th style="width:80%"> Name </th>
                                             <th> Action </th>
                                         </tr>
                                     </thead>
-                                    @foreach ($brand as $data)
+                                    @foreach ($categories as $data)
                                         <tbody>
                                             <tr>
-                                                <td>{{ $data->id }}</td>
+                                                {{-- <td>No</td> --}}
                                                 <td>{{ $data->name }}</td>
-                                                <td>{{ $data->description }}</td>
-
                                                 <td>
-                                                    <a href="{{ route('brand.edit', $data->id) }}">
+                                                    <a href="{{ route('edit.category', $data->id) }}">
                                                         <button style="border: none"
                                                             class="badge badge-gradient-success">EDIT</button>
                                                     </a>
-                                                    <a href="{{ route('brand.destroy', $data->id) }}">
+                                                    <a href="{{ route('delete.category', $data->id) }}">
                                                         <button style="border: none" class="badge badge-gradient-danger"
                                                             onclick="FunctionDelete()">DELETE</button>
                                                     </a>
@@ -48,4 +48,4 @@
                     </div>
                 </div>
             </div>
-        @endsection
+@endsection

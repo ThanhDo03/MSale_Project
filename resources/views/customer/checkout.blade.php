@@ -11,8 +11,6 @@
             </div>
         </div>
     </div>
-
-
     <div class="checkout_area section-padding-80">
         <div class="container">
             <form action="{{route('order.customer')}}" method="POST" enctype="multipart/form-data">
@@ -23,7 +21,6 @@
                             <div class="cart-page-heading mb-30">
                                 <h5>Billing Address</h5>
                             </div>
-
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <label for="first_name">First Name <span>*</span></label>
