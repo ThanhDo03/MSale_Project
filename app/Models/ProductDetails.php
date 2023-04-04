@@ -9,7 +9,7 @@ class ProductDetails extends Model
 {
     use HasFactory;
 
-    protected $table = 'orders';
+    protected $table = 'product_details';
 
     protected $primaryKey = 'id';
 

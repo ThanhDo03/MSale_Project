@@ -65,7 +65,8 @@ class UserController extends Controller
     // Display Admin Upload Product
     public function UploadProduct(){
         $brand = \App\Models\Brand::select('id','name')->get();
-        return view('admin.add_product', compact('brand'));
+        $category = \App\Models\Category::select('id','name')->get();
+        return view('admin.add_product', compact('brand', 'category'));
     }
 
     // Display Admin-Staff

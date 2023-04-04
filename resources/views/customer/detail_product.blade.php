@@ -40,7 +40,12 @@
                             </div>
                             <span>3 Reviews</span>
                         </div>
-                        <div class="product-price-discount"><span>$39.00</span><span class="line-through">{{$detail_product->product_price}}</span>
+                        <div class="product-price-discount">
+                            @if ($detail_product->product_discount != null)
+                                <span>${{$detail_product->product_discount}}</span><span class="line-through">${{$detail_product->product_price}}</span>
+                            @else
+                                <span>${{$detail_product->product_price}}</span>
+                            @endif
                         </div>
                     </div>
                     <p>{{$detail_product->product_des}}</p>
@@ -48,18 +53,17 @@
                         <div class="col-md-6">
                             <label for="size" style="display:block">Size</label>
                             <select id="size" name="size" class="form-control-control">
-                                <option>S</option>
-                                <option>M</option>
-                                <option>L</option>
-                                <option>XL</option>
+                                @foreach (array_unique(array_column($detail_product->product_details->toArray(), 'size')) as $productSize)
+                                    <option>{{ $productSize }}</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="col-md-6">
                             <label for="color" style="display:block">Color</label>
                             <select id="color" name="color" class="form-control-control">
-                                <option>Blue</option>
-                                <option>Green</option>
-                                <option>Red</option>
+                                @foreach (array_unique(array_column($detail_product->product_details->toArray(), 'color')) as $productColor)
+                                    <option>{{ $productColor }}</option>
+                                @endforeach
                             </select>
                         </div>
                     </div>
@@ -70,7 +74,13 @@
                             <input type="text" name="quantity" value="1" class="qty">
                             <div class="qtyplus">+</div>
                         </form>
-                        <a href="#" class="round-black-btn">Add to Cart</a>
+                        {{-- <a href="" class="round-black-btn">Add to Cart</a> --}}
+                        <form action="{{ route('cart.product', $detail_product->id) }}" method="GET" class="display-flex">
+                            @csrf
+                            <input type="hidden" value="{{ $id_customer = Auth::id() }}"
+                                name="customer_id">
+                            <button type="submit" class="round-black-btn">Add to Cart</button>
+                        </form>
                     </div>
                 </div>
             </div>

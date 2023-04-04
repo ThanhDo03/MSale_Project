@@ -72,7 +72,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="product-description">
+                                    <div class="product-description"> 
                                         <span>{{ $productdata->brand->name }}</span>
                                         <a href="{{route('detail.product', $productdata->id)}}">
                                             <h6>{{ $productdata->product_name }}</h6>

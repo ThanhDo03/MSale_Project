@@ -99,6 +99,8 @@ Route::post('/AdminSearch', [UserController::class, 'search'])->name('admin.sear
 Route::get('/',[CustomerController::class, 'Customer'])->name('customer');
 // Add Product -> Cart - Customer
 Route::get('/CartProduct/{id_product}',[CustomerController::class, 'cart'])->name('cart.product');
+// Function Delete Product - Cart
+Route::get('/Delete/{id}',[CustomerController::class, 'DeleteCart'])->name('delete.cart');
 // Display Cart - Customer
 Route::get('/ShowCart/{id_customer}',[CustomerController::class,'showCart'])->name('show.cart');
 Route::get('/ShowCart',[CustomerController::class,'showCart_NoUser']);

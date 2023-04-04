@@ -47,15 +47,16 @@
                                                         <span class="badge">Size: S</span>
                                                         <span class="badge">Color: Red</span>
                                                     </td>
-                                                    <td><span class="badge">{{ $data->product->brand->name }}</span>
+                                                    <td>
+                                                        <h4>{{ $data->product->brand->name }}</h4>
                                                     </td>
                                                     <td>
-                                                        <p class="price">${{ $data->product_price }}</p>
+                                                        <h4 class="price">${{ $data->product_price }}</h4>
                                                     </td>
                                                     <td>
-                                                        <p class="price">{{ $data->product_amount }}</p>
+                                                        <h4 class="price">{{ $data->product_amount }}</h4>
                                                     </td>
-                                                    <td></td>
+                                                    <td><a href="{{route('delete.cart', $data->product_id)}}"><i class="fa-solid fa-trash fa-xl"></i></a></td>
                                                 </tr>
                                             @endforeach
                                         </div>

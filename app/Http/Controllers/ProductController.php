@@ -18,8 +18,9 @@ class ProductController extends Controller
                 ->first();
             if (!$product) {
                 $newProdcuct = new Product();
-                $newProdcuct->product_name = $request->name_product;
+                $newProdcuct->product_name = $request->name_product; 
                 $newProdcuct->brand_id = $request->brand_product;
+                $newProdcuct->category_id = $request->category_product;
                 $newProdcuct->product_price = $request->price_product;
                 $name = $request->file('image_product')->getClientOriginalName();
                 $request->file('image_product')->move(public_path('image/Product'), $name);
