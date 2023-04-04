@@ -59,7 +59,7 @@
                                 <li><a href="contact.html">Contact</a></li>
                             </ul>
                         </li>
-                        <li><a href="blog.html">Blog</a></li>
+                        {{-- <li><a href="blog.html">Blog</a></li> --}}
                         @if (Route::has('auth.signin'))
                             @auth
                                 <li>
@@ -133,10 +133,10 @@
                                 <span class="product-remove"><i onclick = "window.location = './Delete/{{$data->product_id}}'" class="fa fa-close" aria-hidden="true"></i></span>
                                 <span class="badge">{{ $data->product->brand->name }}</span>
                                 <h6>{{ $data->product->product_name }}</h6>
-                                <p class="size">Size: S</p>
+                                <p class="size">Size: {{ $data->product_size }}</p>
                                 <p class="color">Quantity: {{ $data->product_amount }}</p>
-                                <p class="color">Color: Red</p>
-                                <p class="price">${{ $data->product->product_price }}</p>
+                                <p class="color">Color: {{ $data->product_color }}</p>
+                                <p class="price">${{ $data->product->product_price * $data->product_amount }}</p>
                             </div>
                         </a>
                     </div>

@@ -1,17 +1,23 @@
 @extends('customer.layout.index')
 @section('content')
+    @if (session('success_cart'))
+    <script>alert("{{ session('success_cart') }}")</script>
+    {{-- <div class="section-heading text-center">
+        {{session('success_cart')}}
+    </div> --}}
+    @endif
     <div class="container">
         <div class="heading-section">
-            <h2>{{$detail_product->product_name}}</h2>
+            <h2>{{ $detail_product->product_name }}</h2>
         </div>
         <div class="row">
             <div class="col-md-6">
                 <div id="slider" class="product-slider">
                     <div class="item">
-                        <img src="{{asset('image/Product/'. $detail_product->product_image)}}" />
+                        <img src="{{ asset('image/Product/' . $detail_product->product_image) }}" />
                     </div>
                     <div class="item">
-                        <img src="{{asset('image/Product/'. $detail_product->product_image)}}" />
+                        <img src="{{ asset('image/Product/' . $detail_product->product_image) }}" />
                     </div>
                 </div>
                 {{-- <div id="thumb" class="owl-carousel product-thumb">
@@ -24,7 +30,9 @@
             <div class="col-md-6">
                 <div class="product-dtl">
                     <div class="product-info">
-                        <div class="product-name"><p>Brand: {{$detail_product->brand->name}}</p></div>
+                        <div class="product-name">
+                            <p>Brand: {{ $detail_product->brand->name }}</p>
+                        </div>
                         <div class="reviews-counter">
                             <div class="rate">
                                 <input type="radio" id="star5" name="rate" value="5" checked />
@@ -42,46 +50,46 @@
                         </div>
                         <div class="product-price-discount">
                             @if ($detail_product->product_discount != null)
-                                <span>${{$detail_product->product_discount}}</span><span class="line-through">${{$detail_product->product_price}}</span>
+                                <span>${{ $detail_product->product_discount }}</span><span
+                                    class="line-through">${{ $detail_product->product_price }}</span>
                             @else
-                                <span>${{$detail_product->product_price}}</span>
+                                <span>${{ $detail_product->product_price }}</span>
                             @endif
                         </div>
                     </div>
-                    <p>{{$detail_product->product_des}}</p>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label for="size" style="display:block">Size</label>
-                            <select id="size" name="size" class="form-control-control">
-                                @foreach (array_unique(array_column($detail_product->product_details->toArray(), 'size')) as $productSize)
-                                    <option>{{ $productSize }}</option>
-                                @endforeach
-                            </select>
+                    <p>{{ $detail_product->product_des }}</p>
+                    <form action="{{ route('cart.product', $detail_product->id) }}" method="GET">
+                        @csrf
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="size" style="display:block">Size</label>
+                                <select id="size" name="size" class="form-control-control">
+                                    @foreach (array_unique(array_column($detail_product->product_details->toArray(), 'size')) as $productSize)
+                                        <option>{{ $productSize }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="color" style="display:block">Color</label>
+                                <select id="color" name="color" class="form-control-control">
+                                    @foreach (array_unique(array_column($detail_product->product_details->toArray(), 'color')) as $productColor)
+                                        <option>{{ $productColor }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
                         </div>
-                        <div class="col-md-6">
-                            <label for="color" style="display:block">Color</label>
-                            <select id="color" name="color" class="form-control-control">
-                                @foreach (array_unique(array_column($detail_product->product_details->toArray(), 'color')) as $productColor)
-                                    <option>{{ $productColor }}</option>
-                                @endforeach
-                            </select>
+                        <div class="product-count">
+                            {{-- <label for="size">Quantity</label>
+                            <form action="#" class="display-flex">
+                                <div class="qtyminus">-</div>
+                                <input type="text" name="quantity" value="1" class="qty">
+                                <div class="qtyplus">+</div>
+                            </form> --}}
+                            {{-- <a href="" class="round-black-btn">Add to Cart</a> --}}
                         </div>
-                    </div>
-                    <div class="product-count">
-                        <label for="size">Quantity</label>
-                        <form action="#" class="display-flex">
-                            <div class="qtyminus">-</div>
-                            <input type="text" name="quantity" value="1" class="qty">
-                            <div class="qtyplus">+</div>
-                        </form>
-                        {{-- <a href="" class="round-black-btn">Add to Cart</a> --}}
-                        <form action="{{ route('cart.product', $detail_product->id) }}" method="GET" class="display-flex">
-                            @csrf
-                            <input type="hidden" value="{{ $id_customer = Auth::id() }}"
-                                name="customer_id">
+                            <input type="hidden" value="{{ $id_customer = Auth::id() }}" name="customer_id">
                             <button type="submit" class="round-black-btn">Add to Cart</button>
-                        </form>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -99,7 +107,7 @@
             <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade show active" id="description" role="tabpanel"
                     aria-labelledby="description-tab">
-                    {{$detail_product->product_des}}
+                    {{ $detail_product->product_des }}
                 </div>
                 <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
                     <div class="review-heading">REVIEWS</div>

@@ -44,14 +44,14 @@
                                                         <a href="">
                                                             <h6>{{ $data->product->product_name }}</h6>
                                                         </a>
-                                                        <span class="badge">Size: S</span>
-                                                        <span class="badge">Color: Red</span>
+                                                        <span class="badge">Size: {{ $data->product_size }}</span>
+                                                        <span class="badge">Color: {{ $data->product_color }}</span>
                                                     </td>
                                                     <td>
                                                         <h4>{{ $data->product->brand->name }}</h4>
                                                     </td>
                                                     <td>
-                                                        <h4 class="price">${{ $data->product_price }}</h4>
+                                                        <h4 class="price">${{ $data->product_price * $data->product_amount }}</h4>
                                                     </td>
                                                     <td>
                                                         <h4 class="price">{{ $data->product_amount }}</h4>

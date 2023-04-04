@@ -44,12 +44,6 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    @if (session('success_cart'))
-                        <script>alert("{{ session('success_cart') }}")</script>
-                        {{-- <div class="section-heading text-center">
-                            {{session('success_cart')}}
-                        </div> --}}
-                    @endif
                 </div>
             </div>
         </div>
@@ -79,7 +73,7 @@
                                         </a>
                                         <p class="product-price">${{ $productdata->product_price }}</p>
 
-                                        <div class="hover-content">
+                                        {{-- <div class="hover-content">
 
                                             <div class="add-to-cart-btn">
                                                 <form action="{{ route('cart.product', $productdata->id) }}" method="GET">
@@ -88,9 +82,8 @@
                                                         name="customer_id">
                                                     <button type="submit" class="btn essence-btn">Add to Cart</button>
                                                 </form>
-                                                {{-- <a href="{{ route('cart.product', $productdata->id) }}"><button class="btn essence-btn">Add to Cart</button></a> --}}
                                             </div>
-                                        </div>
+                                        </div> --}}
                                     </div>
                                 </div>
                             @endif

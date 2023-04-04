@@ -1,8 +1,8 @@
-<div class="container-fluid page-body-wrapper">
-    <!-- partial:../../partials/_sidebar.html -->
-    <nav class="sidebar sidebar-offcanvas" id="sidebar">
-        <ul class="nav">
-            {{-- <li class="nav-item nav-profile">
+    <div class="container-fluid page-body-wrapper">
+        <!-- partial:../../partials/_sidebar.html -->
+        <nav class="sidebar sidebar-offcanvas" id="sidebar">
+            <ul class="nav">
+                {{-- <li class="nav-item nav-profile">
                 <a href="{{route('display.profile',Auth::user()->id)}}" class="nav-link">
                   <div class="nav-profile-image">
                     <img src="{{asset('image/Avatar/'.Auth::user()->avatar)}}" alt="profile">
@@ -14,38 +14,65 @@
                   </div>
                 </a>
             </li> --}}
-            <li class="nav-item">
-                <a class="nav-link" href="{{route('home.admin')}}">
-                    <i class="fa-solid fa-shop fa-sm"></i>
-                    <span class="menu-title">.     Home</span>
-                </a>
-            </li>
-            
-            <li class="nav-item">
-                <a class="nav-link" href="{{route('product.admin')}}">
-                    <i class="fa-solid fa-gear fa-sm"></i>
-                    <span class="menu-title">.     Product</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{route('category.admin')}}">
-                    <i class="fa-solid fa-gear fa-sm"></i>
-                    <span class="menu-title">.     Category</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{route('show.brand')}}">
-                    <i class="fa-solid fa-gear fa-sm"></i>
-                    <span class="menu-title">.     Brand</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{route('logout')}}">
-                    <i class="fa-solid fa-gear fa-sm"></i>
-                    <span class="menu-title">. Import data</span>
-                </a>
-            </li>
-            <li class="nav-item"> 
+                {{-- <li class="nav-item sidebar-actions">
+                <span class="nav-link">
+                    <p class="btn btn-block btn-lg btn-gradient-primary mt-4">+ Product</p>
+                </span>
+            </li> --}}
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('home.admin') }}">
+                        <i class="fa-solid fa-shop fa-sm"></i>
+                        <span class="menu-title">. Home</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('product.admin') }}">
+                        <i class="fa-solid fa-gear fa-sm"></i>
+                        <span class="menu-title">. Product</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('category.admin') }}">
+                        <i class="fa-solid fa-gear fa-sm"></i>
+                        <span class="menu-title">. Category</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('show.brand') }}">
+                        <i class="fa-solid fa-gear fa-sm"></i>
+                        <span class="menu-title">. Brand</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('display.product.sale') }}">
+                        <i class="fa-solid fa-gear fa-sm"></i>
+                        <span class="menu-title">. Product Sale %</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('import.index') }}">
+                        <i class="fa-solid fa-gear fa-sm"></i>
+                        <span class="menu-title">. Import data</span>
+                    </a>
+                </li>
+
+                {{-- <li class="nav-item sidebar-actions">
+                <span class="nav-link">
+                    <p class="btn btn-block btn-lg btn-gradient-primary mt-4">+ Administrators</p>
+                </span>
+            </li> --}}
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('auth.staff') }}">
+                        <i class="fa-sharp fa-solid fa-user"></i>
+                        <span class="menu-title">. Staff</span>
+                    </a>
+                </li>
+
+                {{-- <li class="nav-item"> 
                 <a class="nav-link collapse" href="#ui-basic" data-toggle="collapse" aria-expanded="false" aria-controls="ui-basic">
                     <i class="fa-sharp fa-solid fa-user"></i>
                     <span class="menu-title">. Staff</span>
@@ -57,20 +84,6 @@
                       <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Typography</a></li>
                     </ul>
                 </div>
-            </li>
-            <li class="nav-item sidebar-actions">
-                <span class="nav-link">
-                    <a href="{{route('upload.Product')}}" class="btn btn-block btn-lg btn-gradient-primary mt-4">+ Add a product</a>
-                </span>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{route('display.product.sale')}}">
-                    <i class="fa-solid fa-gear fa-sm"></i>
-                    <span class="menu-title">.     Product Sale %</span>
-                </a>
-            </li>
-            
-            
-        </ul>
-    </nav>
-   
+            </li> --}}
+            </ul>
+        </nav>

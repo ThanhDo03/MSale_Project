@@ -82,6 +82,10 @@ Route::post('/UpdateProfile',[UserController::class,'updateProfile'])->name('upd
 Route::get('/ChangePass',[UserController::class, 'Password'])->name('display.change.pwd');
 // Function Change Pwd Admin
 Route::post('/NewPwd',[UserController::class,'changePwd'])->name('pwd.new');
+// Display Import Data - Admin
+Route::get('/Import',[UserController::class,'IndexImport'])->name('import.index');
+// Display Add Import Data - Admin
+Route::get('/CreateImport',[UserController::class, 'CreateImport'])->name('import.create');
 
 // Function Admin Upload Product
 Route::post('/UploadProduct',[ProductController::class, 'store'])->name('add.product');

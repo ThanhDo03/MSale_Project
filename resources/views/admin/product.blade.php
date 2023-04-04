@@ -8,6 +8,10 @@
                         <div class="card-body">
                             <h4 class="card-title">Product for Shopping <i class="fa-sharp fa-solid fa-cart-shopping"></i>
                             </h4>
+                            <a href="{{route('upload.Product')}}">
+                                <button style="border: none"
+                                    class="badge badge-gradient-info">ADD</button>
+                            </a>
                             <div class="table-responsive">
                                 <table class="table">
                                     <thead>
@@ -16,9 +20,7 @@
                                             <th> Brand </th>
                                             <th> Price </th>
                                             <th> Image </th>
-                                            <th> Amount </th>
                                             <th> Staff </th>
-                                            <th> Status </th>
                                             <th> Action </th>
                                         </tr>
                                     </thead>
@@ -26,16 +28,24 @@
                                         @if ($product->sale == '')
                                             <tbody>
                                                 <tr>
-                                                    <td>{{ $product->product_name }}</td>
+                                                    <td>
+                                                        <p>{{ $product->product_name }}</p>
+                                                        @foreach (array_unique(array_column($product->product_details->toArray(), 'size')) as $productSize)
+                                                            <h6 style="color: #b66dff"> Size: {{$productSize}} 
+                                                                @foreach (array_unique(array_column($product->product_details->toArray(), 'amount')) as $productAmount)
+                                                                    - Quantity: {{ $productAmount }}
+                                                                @endforeach
+                                                            </h6>
+                                                        @endforeach
+                                                    </td>
                                                     <td>{{ $product->brand->name }}</td>
                                                     <td>${{ $product->product_price }}</td>
                                                     <td>
                                                         <img src="{{ asset('image/Product/' . $product->product_image) }}"
                                                             class="mr-2" alt="image">
                                                     </td>
-                                                    <td>{{ $product->product_amount }}</td>
-                                                    <td>{{ $product->Staff }}</td>
-                                                    <td>{{ $product->Status }}</td>
+                                                    
+                                                    <td>{{ $product->staff }}</td>
                                                     <td>
                                                         <a href="{{ route('update.product', $product->id) }}">
                                                             <button style="border: none"

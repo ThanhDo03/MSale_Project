@@ -46,15 +46,9 @@
                             <div class="form-group">
                                 <label for="exampleInputName1">Staff</label>
                                 <input type="text" class="form-control" id="exampleInputName1" placeholder="Name"
-                                    name="staff" value="{{$product->Staff}}">
+                                    name="staff" value="{{$product->staff}}">
                             </div>
                             
-                            <div class="form-group">
-                                <label for="exampleInputName1">Status</label>
-                                <input type="text" class="form-control" id="exampleInputName1" placeholder="Name"
-                                    name="status_product" value="{{$product->Status}}">
-                            </div>
-
                             <div class="form-group">
                                 <label for="exampleTextarea1">Descripsion</label>
                                 <input class="form-control" id="exampleTextarea1" rows="4" name="des_product" value="{{$product->product_des}}">

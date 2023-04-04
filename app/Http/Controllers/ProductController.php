@@ -26,9 +26,8 @@ class ProductController extends Controller
                 $request->file('image_product')->move(public_path('image/Product'), $name);
                 $newProdcuct->product_image = $name;
                 $newProdcuct->product_amount = $request->amount_product;
-                $newProdcuct->Staff = $request->staff;
-                $newProdcuct->Status = $request->status_product;
                 $newProdcuct->product_des = $request->des_product;
+                $newProdcuct->staff = $request->staff;
                 $newProdcuct->sale = $request->sale;
                 $newProdcuct->save();
                 $products = Product::all();
@@ -66,7 +65,6 @@ class ProductController extends Controller
                 }
                 $product_edit->product_amount = $request->amount_product;
                 $product_edit->Staff = $request->staff;
-                $product_edit->Status = $request->status_product;
                 $product_edit->product_des = $request->des_product;
                 $product_edit->sale = $request->sale;
                 $product_edit->save();

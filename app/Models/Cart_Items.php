@@ -13,7 +13,7 @@ class Cart_Items extends Model
 
     protected $primaryKey = 'cart_id';
 
-    protected $fillable = ['product_id', 'cart_id', 'product_amount','product_price'];
+    protected $fillable = ['product_id', 'cart_id', 'product_amount','product_price','product_color', 'product_size'];
 
     protected $with = ['product'];
 

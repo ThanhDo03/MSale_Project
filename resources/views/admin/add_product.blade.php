@@ -26,7 +26,7 @@
                             <div class="form-group">
                                 <label for="exampleInputPassword4">Category</label>
                                 <select class="form-control" id="exampleSelectGender" name="brand_product">
-                                    @foreach ($category as $data)
+                                    @foreach ($category as $data) 
                                         <option value="{{$data->id}}">{{ $data->name}}</option>
                                     @endforeach
                                 </select>
@@ -50,14 +50,6 @@
                             <div class="form-group">    
                                 <label for="exampleInputEmail3">Staff</label>
                                 <input type="text" class="form-control" id="exampleInputEmail3" placeholder="Staff" name="staff" value="{{Auth::user()->name}}">
-                            </div>
-
-                            <div class="form-group">    
-                                <label for="exampleInputEmail3">Status</label>
-                                <select class="form-control" id="exampleSelectGender" name="status_product">
-                                    <option>Paid</option>
-                                    <option>Unpaid</option>
-                                </select>
                             </div>
 
                             <div class="form-group">

@@ -16,6 +16,8 @@ return new class extends Migration
             $table->integer('cart_id');
             $table->integer('product_amount');
             $table->integer('product_price');
+            $table->string('product_color');
+            $table->string('product_size');
             $table->timestamps();
 
             $table->foreign('product_id')->references('id')->on('product')->onDelete('cascade');

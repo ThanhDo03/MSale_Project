@@ -175,4 +175,14 @@ class UserController extends Controller
         // }
         // $user = $request->user();
     }
+
+    // Display Import Data - Admin
+    public function IndexImport(){
+        return view('admin.import_product_index');
+    }
+
+    // Display Add Import Data - Admin
+    public function CreateImport(){
+        return view('admin.import_product_create');
+    }
 }
