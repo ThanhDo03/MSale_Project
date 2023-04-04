@@ -86,6 +86,13 @@ class CustomerController extends Controller
         }
     }
 
+    // Function Delete Product - Cart
+    public function DeleteCart($id){
+        $cart_delete = Cart_Items::where('product_id', $id)->where('customer_id', auth()->id())->first();
+        $cart_delete->delete();
+        return redirect()->back();
+    }
+
     // Display Cart - Customer
     public function showCart($id_customer)
     {

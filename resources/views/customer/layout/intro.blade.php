@@ -3,7 +3,7 @@
 
         <nav class="classy-navbar" id="essenceNav">
 
-            <a class="nav-brand" href="{{ route('customer') }}">Shoppingg</a>
+            <a class="nav-brand" href="{{ route('customer') }}"><img src="{{asset('image/Favicon/Lorever.png')}}" alt=""></a>
 
             <div class="classy-navbar-toggler">
                 <span class="navbarToggler"><span></span><span></span><span></span></span>
@@ -130,7 +130,7 @@
                                 alt="">
 
                             <div class="cart-item-desc">
-                                <span class="product-remove"><i class="fa fa-close" aria-hidden="true"></i></span>
+                                <span class="product-remove"><i onclick = "window.location = './Delete/{{$data->product_id}}'" class="fa fa-close" aria-hidden="true"></i></span>
                                 <span class="badge">{{ $data->product->brand->name }}</span>
                                 <h6>{{ $data->product->product_name }}</h6>
                                 <p class="size">Size: S</p>

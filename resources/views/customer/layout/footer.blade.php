@@ -43,7 +43,7 @@
                 <div class="single_widget_area d-flex mb-30">
 
                     <div class="footer-logo mr-50">
-                        <a href="#" style="color: #ff084e">Shoppingg</a>
+                        <a href="#" style="color: #ff084e"><img src="{{asset('image/Favicon/Lorever-Footer.png')}}" alt=""></a>
                     </div>
 
                     <div class="footer_menu">

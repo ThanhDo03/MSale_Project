@@ -16,8 +16,17 @@
 
                             <div class="form-group">
                                 <label for="exampleInputPassword4">Brand</label>
-                                <select class="form-control" id="exampleSelectGender" name="brand_product">
+                                <select class="form-control" id="exampleSelectGender" name="category_product">
                                     @foreach ($brand as $data)
+                                        <option value="{{$data->id}}">{{ $data->name}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputPassword4">Category</label>
+                                <select class="form-control" id="exampleSelectGender" name="brand_product">
+                                    @foreach ($category as $data)
                                         <option value="{{$data->id}}">{{ $data->name}}</option>
                                     @endforeach
                                 </select>
